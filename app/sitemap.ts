@@ -1,7 +1,5 @@
 import type { MetadataRoute } from "next";
-import { nav } from "@/lib/data";
-
-const siteUrl = "https://med-merouane.vercel.app";
+import { nav, siteUrl } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return nav.map((item) => ({

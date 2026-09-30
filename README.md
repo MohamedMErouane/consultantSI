@@ -14,7 +14,7 @@ All content is sourced from the real CV and past project history — nothing is 
 - **Contact form**: opens the visitor's email client pre-filled (no backend/third-party service required)
 - **Embedded résumé**: `/resume` shows the PDF inline with a download button
 - **SEO**: metadata, Open Graph, Twitter Card, JSON-LD (`Person` schema), `sitemap.xml`, `robots.txt`
-- **Motion**: scroll-reveal animations, animated skill bars, animated counters, a typing effect cycling through role titles — all respecting `prefers-reduced-motion`
+- **Motion**: scroll-reveal animations, animated counters, a typing effect cycling through role titles — all respecting `prefers-reduced-motion`
 - **Design system**: dark navy background (`#050816`), primary blue (`#2563EB`), sky accent (`#38BDF8`), Inter for UI text, JetBrains Mono for labels/data — a deliberate nod to the "structured specification" aesthetic of the consulting profession, tying the visual identity to the subject.
 
 ## 🗂️ Structure
@@ -63,7 +63,7 @@ npm run start   # serve the production build locally
 2. Go to [vercel.com/new](https://vercel.com/new) and import the repository.
 3. Framework preset: **Next.js** (auto-detected). No environment variables are required.
 4. Click **Deploy**. Vercel builds and serves the site — Google Fonts fetch normally in that environment.
-5. Once live, update `siteUrl` in `app/layout.tsx`, `app/sitemap.ts`, and `app/robots.ts` if the final domain differs from `med-merouane.vercel.app`.
+5. The canonical domain is `consultant-si.vercel.app` — if it ever changes, update `siteUrl` in `lib/data.ts` (used by metadata, sitemap and robots).
 
 ## ✏️ Updating content
 
@@ -73,7 +73,7 @@ Everything content-related lives in **`lib/data.ts`**:
 - `experience` — internships, in reverse-chronological order
 - `education` — degrees
 - `projects` — set `featured: true` to surface a project on the homepage
-- `consultingCompetencies` / `engineeringSkills` / `skillRadar` — the Skills page
+- `consultingCompetencies` / `engineeringSkills` / `coreAreas` — the Skills page
 - `certifications` — add a certificate here the day you earn one; status can be `"planned"`, `"in-progress"`, or `"completed"`
 
 To replace the résumé, overwrite `public/resume.pdf` with an updated export (keep the same filename).

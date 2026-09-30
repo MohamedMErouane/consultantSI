@@ -1,21 +1,22 @@
+export const siteUrl = "https://consultant-si.vercel.app";
+
 export const profile = {
   name: "Mohamed Merouane",
   roles: ["Consultant SI", "Business Analyst", "Software Engineer"],
   location: "Morocco",
   email: "mohamedmerouanemed@gmail.com",
-  phone: "+212 771 436 827",
   linkedin: "https://linkedin.com/in/mohamed-merouane-9a3b18277",
   github: "https://github.com/MohamedMErouane",
-  site: "med-merouane.vercel.app",
+  site: "consultant-si.vercel.app",
+  lastUpdated: "Sep 2026",
   tagline:
-    "Final-year Information Systems Engineering student bridging functional consulting and full-stack engineering — built to analyze how organizations work, then build the systems that run them.",
+    "Final-year Information Systems Engineering student working on both sides of a project: analyzing business processes and requirements, and developing the applications that support them.",
   summary:
-    "Final-year engineering student in Management & Governance of Information Systems at ENSIASD. Experience spans full-stack development, enterprise information systems, ERP concepts, business process modeling, functional analysis, and software engineering. Currently seeking a Final Year Internship (PFE) starting January 2027, aiming to contribute to digital transformation, business analysis, and IT consulting engagements — with a parallel foundation in Java/Spring Boot and modern full-stack engineering.",
+    "Final-year engineering student in Management & Governance of Information Systems at ENSIASD. Experience spans full-stack development, enterprise information systems, ERP concepts, business process modeling, functional analysis, and software engineering. Currently seeking a Final Year Internship (PFE) starting January 2027, aiming to contribute to digital transformation, business analysis, and IT consulting engagements — with hands-on experience in React, Django, NestJS and Java (Android).",
 };
 
 export const targetCompanies = [
-  "Capgemini", "CGI", "Inetum", "NTT DATA", "Deloitte", "EY", "PwC",
-  "Sopra Steria", "Devoteam", "Oracle", "BCG", "Banque Centrale Populaire", "Accenture",
+  "Wavestone", "Formind", "Forvis Mazars", "KPMG", "Deloitte", "Capgemini", "Sopra Steria",
 ];
 
 export const education = [
@@ -25,7 +26,7 @@ export const education = [
     period: "2024 – Present",
     location: "Morocco",
     details: [
-      "Relevant coursework: ERP Systems, Business Process Management, Information Systems Governance, Database Systems, Software Engineering.",
+      "Relevant coursework: ERP Systems, Business Process Management, Information Systems Governance, Change Management, Database Systems, Software Engineering.",
       "Academic project: ERP-oriented information system covering inventory, purchasing, sales and reporting processes.",
     ],
   },
@@ -93,10 +94,10 @@ export const consultingCompetencies = [
   { label: "UML & BPMN", detail: "Process, class, sequence and use-case modeling for functional design." },
   { label: "ERP Concepts", detail: "Inventory, purchasing, sales and reporting process design (academic ERP project)." },
   { label: "IT Governance", detail: "Information systems governance frameworks and coursework at ENSIASD." },
-  { label: "Digital Transformation", detail: "Digitizing manual, paper-based processes into structured systems." },
-  { label: "Stakeholder Management", detail: "Client-facing collaboration across EtudiaLab and Marsa Maroc engagements." },
-  { label: "Agile / Scrum", detail: "Sprint-based delivery, CI/CD practices across internships." },
-  { label: "Risk & Architecture Thinking", detail: "Scalable API and database architecture across enterprise apps." },
+  { label: "Change Management", detail: "Conduite du changement coursework at ENSIASD; user documentation written to support system adoption." },
+  { label: "Stakeholder Management", detail: "Collaboration with business stakeholders during the EtudiaLab and Marsa Maroc internships." },
+  { label: "Agile / Scrum", detail: "Sprint-based delivery and CI/CD practices at EtudiaLab and Marsa Maroc." },
+  { label: "Risk & Compliance Analysis", detail: "Risk identification, internal control and regulatory analysis (Morocco / EU cybersecurity study)." },
 ];
 
 export const engineeringSkills = {
@@ -105,7 +106,7 @@ export const engineeringSkills = {
   Frontend: ["React.js", "Next.js", "Tailwind CSS"],
   Databases: ["PostgreSQL", "Database Design", "SQL"],
   Cloud_DevOps: ["Docker", "Git", "GitHub", "CI/CD", "Linux"],
-  Business: ["Business Process Modeling", "Functional Analysis", "ERP Concepts", "Information Systems"],
+  Business: ["Business Process Modeling", "BPMN 2.0", "UML", "Functional Analysis", "ERP Concepts", "Information Systems"],
 };
 
 export const projects = [
@@ -121,6 +122,17 @@ export const projects = [
     featured: true,
   },
   {
+    title: "Cybersecurity Regulatory Comparative Study — Morocco / EU",
+    period: "2025",
+    category: "Audit & Compliance",
+    stack: ["Compliance", "Risk Analysis", "MCGL", "Documentation"],
+    problem: "Compare Moroccan and European cybersecurity compliance frameworks for practitioners evaluating information system compliance.",
+    solution:
+      "Authored a 14-page regulatory analysis report and a 21-page practical guide (MCGL methodology — Moroccan cybersecurity governance framework), structured around risk identification, internal control and documentation traceability — under academic supervision.",
+    impact: "Used as a reference portfolio asset for auditor/governance positioning; demonstrates analytical writing and regulatory synthesis skills.",
+    featured: true,
+  },
+  {
     title: "Enterprise Web Management Platform",
     period: "2025 – 2026",
     category: "Full-Stack",
@@ -128,21 +140,21 @@ export const projects = [
     problem: "Provide a business with authentication, reporting dashboards and structured data management in one platform.",
     solution: "Developed a full-stack business management platform with scalable APIs, relational database structures and administrative workflows.",
     impact: "Delivered a reusable authentication + reporting dashboard foundation adaptable to other business contexts.",
-    featured: true,
+    featured: false,
   },
   {
     title: "EtudiaLab — EdTech School Management Platform",
     period: "2026",
     category: "Full-Stack / AI Automation",
     stack: ["React", "Django", "PostgreSQL", "Docker"],
-    problem: "A Moroccan EdTech startup needed full-stack features, AI-assisted automation, and reliable CI/CD delivery for its school-management product.",
-    solution: "Built features end-to-end with React/Django, contributed to requirements analysis and functional testing, and implemented browser-automation workflows.",
-    impact: "Shipped production features under Agile / CI/CD discipline in direct collaboration with stakeholders.",
+    problem: "A school-management product needed new features, automation of repetitive internal tasks, and a dependable release process.",
+    solution: "Took features from requirement to release on a React front end and Django back end, wrote test scenarios, and set up AI-assisted and browser-automation workflows.",
+    impact: "Features reached production through the team's Agile sprints and CI/CD pipeline, with stakeholders reviewing each increment.",
     featured: true,
   },
   {
     title: "MemeRace",
-    period: "Independent Project",
+    period: "2026",
     category: "Blockchain / Web3",
     stack: ["Solana", "Web3", "Real-time multiplayer"],
     problem: "Explore real-time, on-chain competitive mechanics for a multiplayer betting game.",
@@ -151,13 +163,14 @@ export const projects = [
     featured: false,
   },
   {
-    title: "Blockchain Arcade Gaming Platform",
-    period: "Independent Project",
-    category: "Blockchain / Web3",
-    stack: ["Web3", "Smart Contracts", "Gaming"],
-    problem: "Build a platform bringing classic arcade-style games on-chain.",
-    solution: "Developed a blockchain-based arcade gaming platform exploring smart-contract game logic and on-chain assets.",
-    impact: "Second independent Web3 project, reinforcing blockchain architecture skills outside coursework.",
+    title: "Arcade Gaming Platform — Development & Blockchain Integration (Client Project, 44you Agency)",
+    period: "12/2024 – 06/2026",
+    category: "Web3 / Full-Stack (Freelance)",
+    stack: ["Next.js", "NestJS", "Prisma", "Docker", "XRPL"],
+    problem: "An agency client needed a full-stack arcade gaming platform built end-to-end with blockchain functionality.",
+    solution:
+      "Developed the game itself alongside its XRPL (XRP Ledger) integration, including a social/room system and an item/furniture system, with a scalable backend architecture (NestJS, Prisma, Docker).",
+    impact: "Delivered a client project independently under contract, from game logic to blockchain integration.",
     featured: false,
   },
   {
@@ -165,27 +178,21 @@ export const projects = [
     period: "2025",
     category: "Full-Stack — Port Authority",
     stack: ["React.js", "NestJS", "TypeScript", "Prisma", "PostgreSQL"],
-    problem: "A public port-authority organization needed maintainable, scalable enterprise applications delivered under strict reliability requirements.",
-    solution: "Built and maintained applications end-to-end, took part in code reviews and functional discussions, and delivered features into production.",
-    impact: "Collaborated across multidisciplinary teams to improve maintainability and scalability in a public-sector, governance-heavy environment.",
+    problem: "Internal applications at a public port operator had to keep evolving while staying reliable for day-to-day operations.",
+    solution: "Worked across the React.js front end and NestJS / Prisma / PostgreSQL back end, from functional discussion through code review to production release.",
+    impact: "New features went live in production; work with developers and business teams focused on keeping the codebase maintainable as it grew.",
     featured: false,
   },
 ];
 
 export const certifications: { name: string; issuer: string; year: string; status: "planned" | "in-progress" | "completed" }[] = [
   { name: "Odoo Functional Consultant — self-paced training", issuer: "Odoo", year: "2026", status: "in-progress" },
-  { name: "ITIL 4 Foundation", issuer: "AXELOS / PeopleCert", year: "2026", status: "planned" },
-  { name: "BPMN 2.0 Professional Modeling", issuer: "Self-study, applied in academic ERP project", year: "2026", status: "planned" },
+  { name: "ITIL 4 Foundation", issuer: "AXELOS / PeopleCert", year: "2027", status: "planned" },
   // Additional certifications can be appended here as they are completed.
 ];
 
-export const skillRadar = [
-  { label: "Business Analysis", value: 82 },
-  { label: "Full-Stack Dev", value: 88 },
-  { label: "ERP / BPMN", value: 75 },
-  { label: "Databases", value: 80 },
-  { label: "Cloud / DevOps", value: 65 },
-  { label: "Stakeholder Comm.", value: 78 },
+export const coreAreas = [
+  "Business Analysis", "Full-Stack Development", "ERP & BPMN", "Databases", "Docker & CI/CD", "Stakeholder Communication",
 ];
 
 export const nav = [

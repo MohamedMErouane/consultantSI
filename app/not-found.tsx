@@ -6,10 +6,10 @@ export default function NotFound() {
     <section className="px-6 pt-48 pb-28 text-center">
       <p className="eyebrow">404</p>
       <h1 className="mt-4 text-3xl sm:text-4xl font-semibold text-ink">
-        This route wasn't specified.
+        Page not found.
       </h1>
       <p className="mt-4 text-ink-muted max-w-md mx-auto">
-        The page you're looking for doesn't exist — or was never part of the requirements.
+        The page you're looking for doesn't exist or has been moved.
       </p>
       <Link
         href="/"

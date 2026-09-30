@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { education } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Education",
   description: "Engineering degree in Information Systems Management & Governance at ENSIASD, Morocco.",
-};
+  path: "/education",
+});
 
 export default function EducationPage() {
   return (
@@ -15,7 +17,7 @@ export default function EducationPage() {
         <SectionHeading
           eyebrow="Academic Path"
           title="Education"
-          description="A degree built specifically at the intersection of information systems and governance — not a generic computer science track."
+          description="An engineering degree in information systems management and governance, preceded by a DUT in computer science."
         />
         <div className="mt-14 space-y-6">
           {education.map((e, i) => (

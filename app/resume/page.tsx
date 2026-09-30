@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Download } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Resume",
   description: "Download Mohamed Merouane's résumé — Consultant SI / Software Engineer track.",
-};
+  path: "/resume",
+});
 
 export default function ResumePage() {
   return (

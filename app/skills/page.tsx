@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
-import SkillBar from "@/components/SkillBar";
 import Badge from "@/components/Badge";
-import { engineeringSkills, consultingCompetencies, skillRadar } from "@/lib/data";
+import { engineeringSkills, consultingCompetencies, coreAreas } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Skills",
   description: "Consulting competencies and engineering skills — from business process modeling to full-stack development.",
-};
+  path: "/skills",
+});
 
 const groupLabels: Record<string, string> = {
   Programming: "Programming",
@@ -26,16 +27,16 @@ export default function SkillsPage() {
         <SectionHeading
           eyebrow="Capability Map"
           title="Skills"
-          description="Two tracks, kept deliberately visible side by side — because the strongest Consultant SI candidates are the ones who can also read the code they're specifying."
+          description="Consulting competencies and software engineering skills, listed separately."
         />
 
-        {/* Proficiency overview */}
+        {/* Core areas */}
         <Reveal delay={0.1}>
           <div className="mt-14 glass rounded-2xl p-7 sm:p-9">
-            <h3 className="eyebrow mb-6">Proficiency overview</h3>
-            <div className="grid sm:grid-cols-2 gap-x-10 gap-y-6">
-              {skillRadar.map((s) => (
-                <SkillBar key={s.label} label={s.label} value={s.value} />
+            <h3 className="eyebrow mb-6">Core areas</h3>
+            <div className="flex flex-wrap gap-2">
+              {coreAreas.map((a) => (
+                <Badge key={a}>{a}</Badge>
               ))}
             </div>
           </div>

@@ -3,12 +3,10 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { profile } from "@/lib/data";
+import { profile, siteUrl } from "@/lib/data";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap", weight: ["400", "500"] });
-
-const siteUrl = "https://med-merouane.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

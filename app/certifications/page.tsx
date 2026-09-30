@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { BadgeCheck, CircleDashed, Clock } from "lucide-react";
 import { certifications } from "@/lib/data";
 import { cn } from "@/lib/cn";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Certifications",
-  description: "Certifications in progress and planned — Odoo Functional Consultant, ITIL 4 Foundation, and BPMN.",
-};
+  description: "Certifications in progress and planned — Odoo Functional Consultant and ITIL 4 Foundation.",
+  path: "/certifications",
+});
 
 const statusMeta = {
   completed: { label: "Completed", icon: BadgeCheck, className: "text-accent border-accent/30 bg-accent/10" },
@@ -23,7 +25,7 @@ export default function CertificationsPage() {
         <SectionHeading
           eyebrow="Credentials"
           title="Certifications"
-          description="A deliberately honest list — what's actually in progress today, and what's next on the roadmap, rather than a padded list of badges."
+          description="Certifications currently in progress or planned. Completed certifications will be added once obtained."
         />
         <div className="mt-14 space-y-4">
           {certifications.map((c, i) => {

@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
-import { Mail, Linkedin, Github, Phone } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import { profile } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description: "Get in touch with Mohamed Merouane about a PFE internship, consulting opportunity, or collaboration.",
-};
+  path: "/contact",
+});
 
 const links = [
   { icon: Mail, label: profile.email, href: `mailto:${profile.email}` },
-  { icon: Phone, label: profile.phone, href: `tel:${profile.phone.replace(/\s/g, "")}` },
   { icon: Linkedin, label: "LinkedIn profile", href: profile.linkedin },
-  { icon: Github, label: "GitHub profile", href: profile.github },
 ];
 
 export default function ContactPage() {

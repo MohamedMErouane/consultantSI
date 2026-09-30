@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Download, FolderKanban } from "lucide-react";
 import RoleTyping from "@/components/RoleTyping";
@@ -6,7 +7,11 @@ import SectionHeading from "@/components/SectionHeading";
 import ProjectCard from "@/components/ProjectCard";
 import Counter from "@/components/Counter";
 import Badge from "@/components/Badge";
-import { profile, projects, consultingCompetencies, targetCompanies } from "@/lib/data";
+import { profile, projects, experience, consultingCompetencies, targetCompanies } from "@/lib/data";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   const featured = projects.filter((p) => p.featured).slice(0, 3);
@@ -70,19 +75,19 @@ export default function HomePage() {
               <div className="mt-14 grid grid-cols-3 max-w-md gap-6 font-mono">
                 <div>
                   <p className="text-2xl text-ink font-semibold">
-                    <Counter to={4} />
+                    <Counter to={experience.length} />
                   </p>
-                  <p className="text-xs text-ink-faint mt-1">Internships</p>
+                  <p className="text-xs text-ink-faint mt-1">Work experiences</p>
                 </div>
                 <div>
                   <p className="text-2xl text-ink font-semibold">
-                    <Counter to={6} />
+                    <Counter to={projects.length} />
                   </p>
                   <p className="text-xs text-ink-faint mt-1">Shipped projects</p>
                 </div>
                 <div>
                   <p className="text-2xl text-ink font-semibold">
-                    <Counter to={2027} />
+                    Jan 2027
                   </p>
                   <p className="text-xs text-ink-faint mt-1">PFE target</p>
                 </div>
@@ -111,7 +116,7 @@ export default function HomePage() {
                 <p className="pl-4 text-ink">✓ BPMN / UML modeling</p>
                 <p className="pl-4 text-ink">✓ ERP &amp; functional specs</p>
                 <p className="pl-4 text-ink">✓ React · Django · NestJS</p>
-                <p className="mt-3 text-ink-faint">// last updated: {new Date().toLocaleDateString("en-GB", { month: "short", year: "numeric" })}</p>
+                <p className="mt-3 text-ink-faint">// last updated: {profile.lastUpdated}</p>
               </div>
             </div>
           </Reveal>
@@ -137,8 +142,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrow="Consultant SI Foundations"
-            title="Competency isn't only code."
-            description="Before a line of code, there's a process to understand, a stakeholder to align, and a requirement to write down precisely. That's the half of the job most engineering portfolios skip."
+            title="Business analysis and IS consulting skills"
+            description="Alongside development work, my training and internships cover process analysis, requirements gathering, functional specifications and working with business stakeholders."
           />
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {consultingCompetencies.slice(0, 6).map((c, i) => (
@@ -167,7 +172,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Selected Work"
             title="Featured projects"
-            description="From an academic ERP system to production features shipped at a port authority — a mix of functional design and full-stack execution."
+            description="An academic ERP system, a cybersecurity compliance study and production EdTech features — functional design, regulatory analysis and full-stack execution."
           />
           <div className="mt-10 grid md:grid-cols-3 gap-6">
             {featured.map((p, i) => (
@@ -192,7 +197,7 @@ export default function HomePage() {
         <Reveal>
           <div className="mx-auto max-w-6xl glass rounded-2xl px-8 py-14 text-center bg-radial-glow">
             <h2 className="text-3xl sm:text-4xl font-semibold text-ink text-balance">
-              Looking for a PFE intern who thinks in processes and ships in code?
+              Looking for a PFE intern in IS consulting or software engineering?
             </h2>
             <p className="mt-4 text-ink-muted max-w-xl mx-auto">
               Available for a Final Year Internship starting January 2027 — open to Consultant SI, Business Analyst, and Software Engineering tracks.

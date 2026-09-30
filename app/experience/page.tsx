@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import Timeline, { TimelineEntry } from "@/components/Timeline";
 import { experience } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Experience",
-  description: "Professional experience — internships in full-stack development, AI automation, and enterprise systems.",
-};
+  description: "Professional experience — internships and a full-stack developer role in web development, AI automation and enterprise systems.",
+  path: "/experience",
+});
 
 export default function ExperiencePage() {
   const items: TimelineEntry[] = experience.map((e) => ({
@@ -24,7 +26,7 @@ export default function ExperiencePage() {
         <SectionHeading
           eyebrow="Career"
           title="Experience"
-          description="Four internships across EdTech, public-sector infrastructure, e-commerce, and mobile — each one adding a different layer to the full-stack + consulting skill set."
+          description="Three internships and one full-stack developer role, in EdTech, public-sector port operations, e-commerce and mobile development."
         />
         <div className="mt-14">
           <Timeline items={items} />
