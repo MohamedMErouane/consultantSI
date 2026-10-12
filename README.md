@@ -2,7 +2,6 @@
 
 A production-ready portfolio built with **Next.js 15 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS**, positioning Mohamed Merouane for **Consultant SI / Business Analyst** and **Software Engineer** internship opportunities (PFE, starting January 2027).
 
-All content is sourced from the real CV and past project history — nothing is invented.
 
 ---
 
