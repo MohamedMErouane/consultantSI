@@ -7,7 +7,7 @@ import SectionHeading from "@/components/SectionHeading";
 import ProjectCard from "@/components/ProjectCard";
 import Counter from "@/components/Counter";
 import Badge from "@/components/Badge";
-import { profile, projects, experience, consultingCompetencies, targetCompanies } from "@/lib/data";
+import { profile, projects, experience, consultingCompetencies } from "@/lib/data";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -120,20 +120,6 @@ export default function HomePage() {
               </div>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      {/* ---------------- TARGET COMPANIES MARQUEE ---------------- */}
-      <section className="border-y border-border-soft py-6 overflow-hidden">
-        <Reveal>
-          <p className="text-center eyebrow mb-4">Preparing for opportunities at</p>
-        </Reveal>
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 px-6 max-w-5xl mx-auto">
-          {targetCompanies.map((c) => (
-            <span key={c} className="text-ink-faint text-sm font-medium tracking-wide">
-              {c}
-            </span>
-          ))}
         </div>
       </section>
 

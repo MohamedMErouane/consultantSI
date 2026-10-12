@@ -5,10 +5,10 @@ export const profile = {
   roles: ["Consultant SI", "Business Analyst", "Software Engineer"],
   location: "Morocco",
   email: "mohamedmerouanemed@gmail.com",
-  linkedin: "https://linkedin.com/in/mohamed-merouane-9a3b18277",
+  linkedin: "https://linkedin.com/in/mohamedmerouane",
   github: "https://github.com/MohamedMErouane",
   site: "consultant-si.vercel.app",
-  lastUpdated: "Sep 2026",
+  lastUpdated: "Oct 2026",
   tagline:
     "Final-year Information Systems Engineering student working on both sides of a project: analyzing business processes and requirements, and developing the applications that support them.",
   summary:
@@ -51,6 +51,17 @@ export const experience = [
       "Implemented AI and browser-automation workflows while following CI/CD and Agile practices.",
     ],
     tags: ["React", "Django", "PostgreSQL", "Docker", "Agile"],
+  },
+  {
+    company: "44you Agency",
+    role: "Web3 & Blockchain Developer (Freelance)",
+    period: "12/2024 – 06/2026",
+    location: "Remote",
+    bullets: [
+      "Developed a complete game for an agency client and integrated it with the XRP Ledger (XRPL) blockchain: social and room system, items and furniture, on-chain features.",
+      "Ran the engagement independently, from requirements to delivery.",
+    ],
+    tags: ["XRPL", "Blockchain", "Game Development", "Freelance"],
   },
   {
     company: "Marsa Maroc — Port Authority",
