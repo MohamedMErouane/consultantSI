@@ -1,4 +1,4 @@
-export const siteUrl = "https://consultant-si.vercel.app";
+export const siteUrl = "https://www.mohamedmerouane.me";
 
 export const profile = {
   name: "Mohamed Merouane",
@@ -7,7 +7,7 @@ export const profile = {
   email: "mohamedmerouanemed@gmail.com",
   linkedin: "https://linkedin.com/in/mohamedmerouane",
   github: "https://github.com/MohamedMErouane",
-  site: "consultant-si.vercel.app",
+  site: "mohamedmerouane.me",
   lastUpdated: "Oct 2026",
   tagline:
     "Final-year Information Systems Engineering student working on both sides of a project: analyzing business processes and requirements, and developing the applications that support them.",
