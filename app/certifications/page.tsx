@@ -8,7 +8,7 @@ import { cn } from "@/lib/cn";
 
 export const metadata: Metadata = pageMetadata({
   title: "Certifications",
-  description: "Certifications in progress and planned — Odoo Functional Consultant and ITIL 4 Foundation.",
+  description: "Professional certificates from Meta, IBM, Princeton and the University at Buffalo, plus Odoo and ITIL in progress.",
   path: "/certifications",
 });
 
@@ -25,7 +25,7 @@ export default function CertificationsPage() {
         <SectionHeading
           eyebrow="Credentials"
           title="Certifications"
-          description="Certifications currently in progress or planned. Completed certifications will be added once obtained."
+          description="Professional certificates in full-stack development and blockchain, with ERP and IT service management certifications on the way."
         />
         <div className="mt-14 space-y-4">
           {certifications.map((c, i) => {
@@ -37,7 +37,8 @@ export default function CertificationsPage() {
                   <div>
                     <p className="text-ink font-medium">{c.name}</p>
                     <p className="text-sm text-ink-muted mt-1">
-                      {c.issuer} · {c.year}
+                      {c.issuer}
+                      {c.year ? ` · ${c.year}` : ""}
                     </p>
                   </div>
                   <span

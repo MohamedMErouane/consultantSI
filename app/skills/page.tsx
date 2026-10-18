@@ -17,7 +17,8 @@ const groupLabels: Record<string, string> = {
   Frontend: "Frontend",
   Databases: "Databases",
   Cloud_DevOps: "Cloud & DevOps",
-  Business: "Business & Process",
+  Security_AI: "Security & AI",
+  Business: "Business, ERP & Design",
 };
 
 export default function SkillsPage() {

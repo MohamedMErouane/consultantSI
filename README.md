@@ -62,7 +62,7 @@ npm run start   # serve the production build locally
 2. Go to [vercel.com/new](https://vercel.com/new) and import the repository.
 3. Framework preset: **Next.js** (auto-detected). No environment variables are required.
 4. Click **Deploy**. Vercel builds and serves the site — Google Fonts fetch normally in that environment.
-5. The canonical domain is `consultant-si.vercel.app` — if it ever changes, update `siteUrl` in `lib/data.ts` (used by metadata, sitemap and robots).
+5. The canonical domain is `www.mohamedmerouane.me` — if it ever changes, update `siteUrl` in `lib/data.ts` (used by metadata, sitemap and robots).
 
 ## ✏️ Updating content
 

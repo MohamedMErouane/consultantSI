@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
+import Link from "next/link";
+import { ArrowRight, GraduationCap, BadgeCheck, FileText } from "lucide-react";
 import { profile, projects } from "@/lib/data";
 
 export const metadata: Metadata = pageMetadata({
@@ -65,6 +67,25 @@ export default function AboutPage() {
                 <p className="text-sm text-ink-muted mt-2 leading-relaxed">{p.text}</p>
               </div>
             </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-12 grid sm:grid-cols-3 gap-4">
+          {[
+            { href: "/education", label: "Education", icon: GraduationCap },
+            { href: "/certifications", label: "Certifications", icon: BadgeCheck },
+            { href: "/resume", label: "Resume", icon: FileText },
+          ].map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="group glass rounded-xl px-5 py-4 flex items-center justify-between text-sm text-ink hover:border-accent/40 transition-colors"
+            >
+              <span className="flex items-center gap-3">
+                <l.icon size={17} className="text-accent" /> {l.label}
+              </span>
+              <ArrowRight size={15} className="text-ink-faint group-hover:text-accent group-hover:translate-x-0.5 transition-all" />
+            </Link>
           ))}
         </div>
       </div>

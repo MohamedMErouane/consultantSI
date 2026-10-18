@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
-import { nav, siteUrl } from "@/lib/data";
+import { allRoutes, siteUrl } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return nav.map((item) => ({
+  return allRoutes.map((item) => ({
     url: `${siteUrl}${item.href}`,
     lastModified: new Date(),
     changeFrequency: "monthly",

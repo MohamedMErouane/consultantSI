@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Download, FolderKanban } from "lucide-react";
+import { ArrowRight, Download, FolderKanban, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import RoleTyping from "@/components/RoleTyping";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ProjectCard from "@/components/ProjectCard";
 import Counter from "@/components/Counter";
-import Badge from "@/components/Badge";
-import { profile, projects, experience, consultingCompetencies } from "@/lib/data";
+import { profile, projects, experience, consultingCompetencies, workedWith, highlights, approach } from "@/lib/data";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -15,40 +14,45 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const featured = projects.filter((p) => p.featured).slice(0, 3);
+  const latest = experience.slice(0, 3);
 
   return (
     <>
       {/* ---------------- HERO ---------------- */}
-      <section className="relative pt-40 pb-28 px-6">
-        <div className="mx-auto max-w-6xl grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+      <section className="relative pt-36 sm:pt-40 pb-20 px-6">
+        <div className="mx-auto max-w-6xl grid lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-16 items-center">
           <div>
             <Reveal>
-              <span className="eyebrow inline-flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-                Open to PFE — starting January 2027
+              <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1.5 font-mono text-[11px] tracking-[0.14em] uppercase text-accent">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60 animate-ping" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                </span>
+                Available for a 6-month PFE · Jan 2027
               </span>
             </Reveal>
 
             <Reveal delay={0.08}>
-              <h1 className="mt-5 text-4xl sm:text-6xl font-semibold tracking-tight text-ink leading-[1.08] text-balance">
-                Information Systems <br className="hidden sm:block" />
-                Engineering Student
+              <h1 className="mt-6 text-5xl sm:text-7xl font-semibold tracking-tight leading-[1.02] text-balance">
+                <span className="text-ink">Mohamed</span>{" "}
+                <span className="bg-gradient-to-r from-accent via-sky-300 to-primary bg-clip-text text-transparent">Merouane</span>
               </h1>
             </Reveal>
 
             <Reveal delay={0.14}>
-              <p className="mt-5 text-2xl sm:text-3xl font-mono text-ink-muted h-10">
+              <p className="mt-5 text-xl sm:text-2xl font-mono text-ink-muted min-h-[2.25rem]">
+                <span className="text-ink-faint">&gt; </span>
                 <RoleTyping roles={profile.roles} />
               </p>
             </Reveal>
 
             <Reveal delay={0.2}>
               <p className="mt-6 text-ink-muted text-lg leading-relaxed max-w-xl">
-                {profile.tagline}
+                Final-year Information Systems engineering student at ENSIASD. {profile.tagline}
               </p>
             </Reveal>
 
-            <Reveal delay={0.28}>
+            <Reveal delay={0.26}>
               <div className="mt-9 flex flex-wrap items-center gap-3">
                 <Link
                   href="/resume"
@@ -60,81 +64,160 @@ export default function HomePage() {
                   href="/projects"
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-3 text-sm font-medium text-ink hover:border-accent/50 hover:text-accent transition-colors"
                 >
-                  <FolderKanban size={16} /> See Projects
+                  <FolderKanban size={16} /> See projects
                 </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-ink-muted hover:text-ink transition-colors"
-                >
-                  Contact Me <ArrowRight size={16} />
-                </Link>
+                <div className="flex items-center gap-1 sm:ml-2">
+                  {[
+                    { href: profile.linkedin, icon: Linkedin, label: "LinkedIn" },
+                    { href: profile.github, icon: Github, label: "GitHub" },
+                    { href: `mailto:${profile.email}`, icon: Mail, label: "Email" },
+                  ].map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      aria-label={s.label}
+                      target={s.href.startsWith("http") ? "_blank" : undefined}
+                      rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="grid h-11 w-11 place-items-center rounded-lg text-ink-muted hover:text-accent hover:bg-accent/10 transition-colors"
+                    >
+                      <s.icon size={18} />
+                    </a>
+                  ))}
+                </div>
               </div>
             </Reveal>
 
-            <Reveal delay={0.34}>
-              <div className="mt-14 grid grid-cols-3 max-w-md gap-6 font-mono">
-                <div>
-                  <p className="text-2xl text-ink font-semibold">
-                    <Counter to={experience.length} />
-                  </p>
-                  <p className="text-xs text-ink-faint mt-1">Work experiences</p>
-                </div>
-                <div>
-                  <p className="text-2xl text-ink font-semibold">
-                    <Counter to={projects.length} />
-                  </p>
-                  <p className="text-xs text-ink-faint mt-1">Shipped projects</p>
-                </div>
-                <div>
-                  <p className="text-2xl text-ink font-semibold">
-                    Jan 2027
-                  </p>
-                  <p className="text-xs text-ink-faint mt-1">PFE target</p>
-                </div>
-              </div>
+            <Reveal delay={0.32}>
+              <p className="mt-6 inline-flex items-center gap-2 text-xs text-ink-faint font-mono">
+                <MapPin size={13} /> {profile.location} · {profile.mobility}
+              </p>
             </Reveal>
           </div>
 
           {/* Signature element: a "spec panel" — case-file styling that speaks the consultant's own language */}
           <Reveal delay={0.2} y={22}>
-            <div className="glass rounded-2xl overflow-hidden shadow-glow">
-              <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border-soft">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#ef4444]/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#f59e0b]/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#22c55e]/70" />
-                <span className="ml-3 font-mono text-[11px] text-ink-faint">candidate-profile.spec</span>
-              </div>
-              <div className="p-6 font-mono text-[13px] leading-7">
-                <p><span className="text-ink-faint">project:</span> <span className="text-ink">"PFE — Consultant SI"</span></p>
-                <p><span className="text-ink-faint">candidate:</span> <span className="text-ink">"Mohamed Merouane"</span></p>
-                <p><span className="text-ink-faint">status:</span> <span className="text-accent">"available"</span></p>
-                <p className="mt-3"><span className="text-ink-faint">stakeholders:</span></p>
-                <p className="pl-4 text-ink">- business_analysis</p>
-                <p className="pl-4 text-ink">- software_engineering</p>
-                <p className="pl-4 text-ink">- digital_transformation</p>
-                <p className="mt-3"><span className="text-ink-faint">requirements:</span></p>
-                <p className="pl-4 text-ink">✓ BPMN / UML modeling</p>
-                <p className="pl-4 text-ink">✓ ERP &amp; functional specs</p>
-                <p className="pl-4 text-ink">✓ React · Django · NestJS</p>
-                <p className="mt-3 text-ink-faint">// last updated: {profile.lastUpdated}</p>
+            <div className="relative">
+              <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-primary/20 blur-3xl" aria-hidden />
+              <div className="glass rounded-2xl overflow-hidden shadow-glow">
+                <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border-soft">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#ef4444]/70" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#f59e0b]/70" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#22c55e]/70" />
+                  <span className="ml-3 font-mono text-[11px] text-ink-faint">candidate-profile.yaml</span>
+                </div>
+                <div className="p-6 font-mono text-[13px] leading-7 overflow-x-auto">
+                  <p><span className="text-ink-faint">candidate:</span> <span className="text-ink">Mohamed Merouane</span></p>
+                  <p><span className="text-ink-faint">degree:</span> <span className="text-ink">Engineering, IS Management &amp; Governance</span></p>
+                  <p><span className="text-ink-faint">status:</span> <span className="text-emerald-400">available</span> <span className="text-ink-faint"># PFE · 6 months · Jan 2027</span></p>
+                  <p className="mt-3"><span className="text-ink-faint">tracks:</span></p>
+                  <p className="pl-4 text-ink">- business_analysis <span className="text-ink-faint">/ AMOA</span></p>
+                  <p className="pl-4 text-ink">- erp_consulting <span className="text-ink-faint">/ Odoo</span></p>
+                  <p className="pl-4 text-ink">- full_stack_engineering</p>
+                  <p className="mt-3"><span className="text-ink-faint">shipped_at:</span></p>
+                  {latest.map((e) => (
+                    <p key={e.company} className="pl-4 text-ink">
+                      ✓ {e.company.split(" — ")[0]} <span className="text-ink-faint">{e.period.split(" – ")[0]}</span>
+                    </p>
+                  ))}
+                  <p className="mt-3"><span className="text-ink-faint">stack:</span> <span className="text-accent">[React, Next.js, NestJS, Django, PostgreSQL, Docker]</span></p>
+                </div>
               </div>
             </div>
           </Reveal>
         </div>
+
+        {/* Key numbers */}
+        <Reveal delay={0.38}>
+          <div className="mx-auto max-w-6xl mt-16 grid grid-cols-3 rounded-2xl glass divide-x divide-border-soft">
+            {highlights.map((h) => (
+              <div key={h.label} className="px-4 sm:px-8 py-6 text-center sm:text-left">
+                <p className="text-3xl sm:text-4xl font-semibold text-ink font-mono">
+                  <Counter to={h.value} suffix={h.suffix} />
+                </p>
+                <p className="text-[11px] sm:text-xs text-ink-muted mt-1.5 leading-snug">{h.label}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
-      {/* ---------------- CONSULTANT SI STRIP ---------------- */}
+      {/* ---------------- WORKED WITH ---------------- */}
+      <section className="px-6 pb-8">
+        <div className="mx-auto max-w-6xl">
+          <p className="eyebrow text-center !text-ink-faint">Delivered work for</p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
+            {workedWith.map((w) => (
+              <span key={w} className="text-lg sm:text-xl font-semibold tracking-tight text-ink-muted/80 hover:text-ink transition-colors">
+                {w}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- APPROACH ---------------- */}
       <section className="px-6 py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
-            eyebrow="Consultant SI Foundations"
+            eyebrow="How I work"
+            title="From the business need to software people actually use"
+            description="Most projects fail between the meeting room and the code. I cover the whole path, so nothing gets lost in translation."
+          />
+          <ol className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 relative">
+            <div className="hidden lg:block absolute top-9 left-[12%] right-[12%] h-px bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0" aria-hidden />
+            {approach.map((a, i) => (
+              <Reveal key={a.step} delay={i * 0.07}>
+                <li className="relative glass rounded-xl p-5 h-full">
+                  <span className="grid h-9 w-9 place-items-center rounded-full border border-accent/40 bg-bg font-mono text-xs text-accent">
+                    {a.step}
+                  </span>
+                  <p className="mt-4 text-ink font-medium">{a.title}</p>
+                  <p className="text-ink-muted text-sm mt-1.5 leading-relaxed">{a.text}</p>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ---------------- FEATURED PROJECTS ---------------- */}
+      <section className="px-6 py-24 border-t border-border-soft">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <SectionHeading
+              eyebrow="Selected work"
+              title="Featured projects"
+              description="A platform built end-to-end, enterprise apps in production, and an ERP deployment — each told as problem, solution and impact."
+            />
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 text-sm text-accent hover:gap-3 transition-all"
+            >
+              All {projects.length} projects <ArrowRight size={15} />
+            </Link>
+          </div>
+          <div className="mt-10 grid md:grid-cols-3 gap-6">
+            {featured.map((p, i) => (
+              <Reveal key={p.title} delay={i * 0.08}>
+                <ProjectCard project={p} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- CONSULTANT SI STRIP ---------------- */}
+      <section className="px-6 py-24 border-t border-border-soft">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            eyebrow="Consultant SI foundations"
             title="Business analysis and IS consulting skills"
-            description="Alongside development work, my training and internships cover process analysis, requirements gathering, functional specifications and working with business stakeholders."
+            description="Alongside development, my training and internships cover process analysis, requirements, functional specifications and working with business stakeholders."
           />
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {consultingCompetencies.slice(0, 6).map((c, i) => (
               <Reveal key={c.label} delay={i * 0.05}>
-                <div className="glass rounded-xl p-5 h-full">
+                <div className="glass rounded-xl p-5 h-full hover:border-accent/30 transition-colors">
                   <p className="text-ink font-medium">{c.label}</p>
                   <p className="text-ink-muted text-sm mt-1.5 leading-relaxed">{c.detail}</p>
                 </div>
@@ -152,41 +235,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------------- FEATURED PROJECTS ---------------- */}
-      <section className="px-6 py-24 border-t border-border-soft">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            eyebrow="Selected Work"
-            title="Featured projects"
-            description="An academic ERP system, a cybersecurity compliance study and production EdTech features — functional design, regulatory analysis and full-stack execution."
-          />
-          <div className="mt-10 grid md:grid-cols-3 gap-6">
-            {featured.map((p, i) => (
-              <Reveal key={p.title} delay={i * 0.08}>
-                <ProjectCard project={p} />
-              </Reveal>
-            ))}
-          </div>
-          <Reveal delay={0.2}>
-            <Link
-              href="/projects"
-              className="mt-8 inline-flex items-center gap-2 text-sm text-accent hover:gap-3 transition-all"
-            >
-              View all projects <ArrowRight size={15} />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
       {/* ---------------- CTA ---------------- */}
-      <section className="px-6 pb-28">
+      <section className="px-6 pb-20">
         <Reveal>
           <div className="mx-auto max-w-6xl glass rounded-2xl px-8 py-14 text-center bg-radial-glow">
             <h2 className="text-3xl sm:text-4xl font-semibold text-ink text-balance">
-              Looking for a PFE intern in IS consulting or software engineering?
+              Looking for a PFE intern who can talk to the business and ship the code?
             </h2>
             <p className="mt-4 text-ink-muted max-w-xl mx-auto">
-              Available for a Final Year Internship starting January 2027 — open to Consultant SI, Business Analyst, and Software Engineering tracks.
+              Available for a 6-month internship from January 2027 — Business Analyst, Consultant SI / ERP or Full-Stack Software Engineering.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
