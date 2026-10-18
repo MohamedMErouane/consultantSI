@@ -187,7 +187,7 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Selected work"
               title="Featured projects"
-              description="A platform built end-to-end, enterprise apps in production, and an ERP deployment — each told as problem, solution and impact."
+              description="An ERP process redesign, a Kubernetes delivery platform and a school platform built end-to-end — each told as problem, solution and impact, with the code to back it up."
             />
             <Link
               href="/projects"

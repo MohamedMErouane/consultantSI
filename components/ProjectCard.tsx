@@ -37,7 +37,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <span className="mt-6 inline-flex items-center gap-1.5 text-sm text-accent">
-        Read the case study
+        {project.repoUrl ? "Case study + code" : "Read the case study"}
         <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       </span>
     </Link>

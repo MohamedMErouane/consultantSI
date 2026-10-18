@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, Briefcase, Calendar, CheckCircle2, User } from "lucide-react";
+import { ArrowLeft, ArrowRight, Briefcase, Calendar, CheckCircle2, Github, User } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Badge from "@/components/Badge";
 import { pageMetadata } from "@/lib/seo";
@@ -42,7 +42,8 @@ export default async function ProjectPage({ params }: Params) {
   const jsonLd = [
     {
       "@context": "https://schema.org",
-      "@type": "CreativeWork",
+      "@type": p.repoUrl ? "SoftwareSourceCode" : "CreativeWork",
+      ...(p.repoUrl ? { codeRepository: p.repoUrl } : {}),
       name: p.title,
       headline: p.title,
       description: p.overview,
@@ -82,6 +83,16 @@ export default async function ProjectPage({ params }: Params) {
           <span className="eyebrow mt-8 block">{p.category}</span>
           <h1 className="mt-3 text-3xl sm:text-5xl font-semibold tracking-tight text-ink leading-tight text-balance">{p.title}</h1>
           <p className="mt-5 text-lg text-ink-muted leading-relaxed">{p.overview}</p>
+          {p.repoUrl && (
+            <a
+              href={p.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-7 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white shadow-glow hover:bg-primary-dim transition-colors"
+            >
+              <Github size={16} /> View the code on GitHub
+            </a>
+          )}
         </Reveal>
 
         {/* Fact sheet */}

@@ -131,7 +131,7 @@ export const engineeringSkills = {
   Backend: ["Node.js", "NestJS", "Express.js", "Django", "Django REST Framework", "REST APIs", "WebSocket (Socket.io)"],
   Frontend: ["React.js", "Next.js", "Tailwind CSS", "Vite", "HTML5 / CSS3"],
   Databases: ["PostgreSQL", "MongoDB", "Redis", "Prisma ORM", "Relational data modeling"],
-  Cloud_DevOps: ["Docker", "Kubernetes", "CI/CD", "Git / GitHub", "AWS", "Linux"],
+  Cloud_DevOps: ["Docker", "Kubernetes", "Kustomize", "Terraform", "Helm", "GitHub Actions (CI/CD)", "Prometheus / Grafana", "AWS", "Linux"],
   Security_AI: ["SSO", "OAuth 2.0", "OpenID Connect", "LLM integration", "AI-driven automation"],
   Business: ["BPMN 2.0", "UML", "Functional Analysis", "Odoo / ERP", "Power BI", "Figma", "Scrum / Kanban"],
 };

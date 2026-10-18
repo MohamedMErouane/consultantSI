@@ -19,9 +19,100 @@ export type Project = {
   results: string[];
   skills: string[];
   featured?: boolean;
+  repoUrl?: string;
 };
 
 export const projects: Project[] = [
+  {
+    slug: "procure-to-pay-redesign-odoo",
+    title: "Procure-to-Pay Process Redesign on Odoo 17",
+    shortTitle: "P2P redesign (Odoo)",
+    period: "2026",
+    category: "Consultant SI / ERP",
+    context: "Personal consulting case study — fictional distributor 'Atlas Distribution'",
+    role: "IS consultant & Odoo developer",
+    stack: ["Odoo 17", "Python", "BPMN 2.0", "PostgreSQL", "Docker", "GitHub Actions"],
+    problem:
+      "Purchases were requested over WhatsApp, written in Excel and signed on paper by one director; bills were paid without checking what was received.",
+    solution:
+      "Ran a full consulting cycle — As-Is/To-Be BPMN, gap analysis, functional spec — then built an Odoo 17 module adding an approval matrix and a three-way-match control on vendor bills.",
+    impact:
+      "Every PO follows amount-based approval rules with an audit trail, and a bill that doesn't match the PO and the receipt can no longer be posted.",
+    overview:
+      "An end-to-end IS consulting engagement on the Procure-to-Pay process, run on a fictional Moroccan distributor. It goes from interviews and process models to a working, tested Odoo module and a change-management plan — the full path a Consultant SI follows on an ERP project.",
+    contributions: [
+      "Mapped the As-Is process in BPMN 2.0 and identified 6 pain points and their root causes.",
+      "Ran a gap analysis of standard Odoo 17 vs the need, applying 'configure first, customise only where needed'.",
+      "Designed the To-Be process with 7 business rules, a RACI and segregation of duties.",
+      "Wrote the functional specification: 7 requirements, data model, security matrix, screens.",
+      "Built the p2p_approval_matrix module: approval bands per amount, approval log with lead-time KPI, three-way match blocking bill posting, finance-manager exception approval with a written reason.",
+      "Wrote a test plan of 15 scenarios with a traceability matrix — every scenario automated as an Odoo test.",
+      "Produced an ADKAR change-management plan with go-live checklist and adoption KPIs.",
+    ],
+    challenges: [
+      {
+        title: "Customise as little as possible",
+        text: "Odoo already has a single approval threshold. The module extends that mechanism instead of replacing the purchase flow, so it stays upgrade-friendly and falls back to standard behaviour when no matrix is set.",
+      },
+      {
+        title: "A control people will accept",
+        text: "Blocking bills can frustrate accounting, so every block explains the exact issue and there is a controlled, logged exception path for the finance manager.",
+      },
+    ],
+    results: [
+      "Complete deliverable set: scope & RACI, As-Is & gap analysis, To-Be, functional spec, test plan, change plan.",
+      "Installable Odoo 17 module with approval matrix, approval analysis (pivot/graph) and three-way match.",
+      "15 automated test scenarios traced to every requirement and business rule.",
+    ],
+    skills: ["Business process analysis", "BPMN 2.0", "Gap analysis", "Functional specification", "Odoo development", "Change management"],
+    featured: true,
+    repoUrl: "https://github.com/MohamedMErouane/odoo-p2p-process-redesign",
+  },
+  {
+    slug: "kubernetes-devops-platform",
+    title: "Kubernetes Delivery Platform — CI/CD, IaC & Observability",
+    shortTitle: "K8s DevOps platform",
+    period: "2026",
+    category: "DevOps / Cloud",
+    context: "Personal project",
+    role: "DevOps engineer",
+    stack: ["Kubernetes", "Docker", "Terraform", "GitHub Actions", "Prometheus", "Grafana", "Node.js", "PostgreSQL"],
+    problem:
+      "Shipping a web app reliably needs more than code: repeatable infrastructure, automated testing, secure containers, safe rollouts and monitoring.",
+    solution:
+      "Built a production-style platform around a small URL-shortener app: hardened containers, Kustomize overlays, Terraform-provisioned cluster with ingress and monitoring, and a 5-stage GitHub Actions pipeline that deploys to a real Kubernetes cluster.",
+    impact:
+      "Each push is tested, scanned, deployed to Kubernetes and checked for zero downtime: the pipeline restarts the API under live traffic and fails if a single request errors.",
+    overview:
+      "A delivery platform that takes a containerised app from git push to a running, monitored Kubernetes deployment. The application (Linkly, a URL shortener with a TypeScript API and PostgreSQL) is deliberately simple; the work is everything around it.",
+    contributions: [
+      "Wrote the API with health/readiness probes, Prometheus metrics and graceful SIGTERM shutdown, covered by integration tests against PostgreSQL.",
+      "Built multi-stage, non-root Docker images and a Docker Compose setup for local development.",
+      "Wrote Kubernetes manifests with Kustomize (dev / prod): rolling updates, HPA, PodDisruptionBudget, StatefulSet, Ingress.",
+      "Hardened the cluster: restricted Pod Security Standard, read-only filesystems, dropped capabilities, default-deny NetworkPolicies.",
+      "Provisioned the cluster with Terraform (kind + ingress-nginx, metrics-server, kube-prometheus-stack via Helm).",
+      "Added observability as code: ServiceMonitor, alert rules linked to a runbook, Grafana dashboard.",
+      "Built the CI/CD pipeline: tests, manifest validation, Terraform checks, Trivy image scan, GHCR publish, e2e deploy to kind with a zero-downtime check.",
+    ],
+    challenges: [
+      {
+        title: "Zero downtime, proven",
+        text: "It takes four pieces working together — maxUnavailable 0, readiness probes, a preStop delay and graceful shutdown in the app — so the pipeline tests it under load instead of assuming it.",
+      },
+      {
+        title: "Probes that don't make outages worse",
+        text: "Liveness never checks the database: if Postgres goes down, pods leave the load balancer via readiness instead of being restarted in a loop.",
+      },
+    ],
+    results: [
+      "One command brings up the full platform locally (Terraform + kind).",
+      "5-stage pipeline covering tests, validation, security scanning, publishing and real Kubernetes deployment.",
+      "Architecture decisions and an on-call runbook documented in the repository.",
+    ],
+    skills: ["Kubernetes", "CI/CD", "Infrastructure as Code", "Container security", "Observability", "SRE practices"],
+    featured: true,
+    repoUrl: "https://github.com/MohamedMErouane/k8s-devops-platform",
+  },
   {
     slug: "edutrack-school-management-platform",
     title: "EduTrack — School Management Platform (EtudiaLab)",
@@ -105,7 +196,6 @@ export const projects: Project[] = [
       "Hands-on experience with a typed full-stack (TypeScript end to end) and team code-review workflows.",
     ],
     skills: ["TypeScript full-stack", "Code review", "Enterprise applications", "Working with business teams"],
-    featured: true,
   },
   {
     slug: "odoo-erp-deployment",
@@ -147,7 +237,6 @@ export const projects: Project[] = [
       "Full functional deliverables: process maps, specifications, test scenarios, user documentation.",
     ],
     skills: ["Odoo", "BPMN 2.0", "Functional specifications", "Testing (recette)", "Change management"],
-    featured: true,
   },
   {
     slug: "cybersecurity-regulatory-study-morocco-eu",
