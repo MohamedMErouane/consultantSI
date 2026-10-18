@@ -62,7 +62,7 @@ export const projects: Project[] = [
     results: [
       "Complete deliverable set: scope & RACI, As-Is & gap analysis, To-Be, functional spec, test plan, change plan.",
       "Installable Odoo 17 module with approval matrix, approval analysis (pivot/graph) and three-way match.",
-      "15 automated test scenarios traced to every requirement and business rule.",
+      "15 automated test scenarios traced to every requirement and business rule — 15 / 15 passing on Odoo 17.",
     ],
     skills: ["Business process analysis", "BPMN 2.0", "Gap analysis", "Functional specification", "Odoo development", "Change management"],
     featured: true,
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     solution:
       "Built a production-style platform around a small URL-shortener app: hardened containers, Kustomize overlays, Terraform-provisioned cluster with ingress and monitoring, and a 5-stage GitHub Actions pipeline that deploys to a real Kubernetes cluster.",
     impact:
-      "Each push is tested, scanned, deployed to Kubernetes and checked for zero downtime: the pipeline restarts the API under live traffic and fails if a single request errors.",
+      "A pipeline designed to test, scan and deploy every push to Kubernetes, then restart the API under live traffic and fail if a single request errors — zero downtime proven, not assumed.",
     overview:
       "A delivery platform that takes a containerised app from git push to a running, monitored Kubernetes deployment. The application (Linkly, a URL shortener with a TypeScript API and PostgreSQL) is deliberately simple; the work is everything around it.",
     contributions: [
