@@ -91,3 +91,90 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #2563eb;
 }
+
+/* ---------- First-visit intro (see components/IntroSplash.tsx) ---------- */
+.intro-splash {
+  display: none;
+}
+html[data-intro] .intro-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: radial-gradient(60% 50% at 50% 45%, #0d1a3a 0%, #050816 70%);
+  animation: intro-out 0.4s cubic-bezier(0.65, 0, 0.35, 1) 1.15s forwards;
+}
+.intro-mark {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  display: grid;
+  place-items: center;
+  animation: intro-pop 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.intro-frame {
+  position: absolute;
+  inset: 0;
+}
+.intro-frame rect {
+  fill: none;
+  stroke: #38bdf8;
+  stroke-width: 2.5;
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.55));
+  animation: intro-draw 0.7s cubic-bezier(0.65, 0, 0.35, 1) 0.05s forwards;
+}
+.intro-m {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  letter-spacing: -2px;
+  background: linear-gradient(135deg, #e7ecf7 0%, #38bdf8 60%, #2563eb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  animation: intro-fade 0.4s ease 0.3s forwards;
+}
+.intro-name {
+  font-family: var(--font-mono), monospace;
+  font-size: 15px;
+  letter-spacing: 0.32em;
+  color: #e7ecf7;
+  display: flex;
+}
+.intro-letter {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: intro-letter 0.3s ease forwards;
+}
+.intro-dot,
+.intro-cursor {
+  color: #38bdf8;
+}
+.intro-cursor {
+  animation: intro-blink 0.5s steps(1) infinite;
+}
+.intro-bar {
+  width: 140px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: intro-bar 1s cubic-bezier(0.65, 0, 0.35, 1) 0.1s forwards;
+}
+@keyframes intro-draw { to { stroke-dashoffset: 0; } }
+@keyframes intro-pop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes intro-fade { to { opacity: 1; } }
+@keyframes intro-letter { to { opacity: 1; transform: none; } }
+@keyframes intro-bar { to { transform: scaleX(1); } }
+@keyframes intro-out {
+  to { opacity: 0; visibility: hidden; transform: scale(1.04); }
+}
+@keyframes intro-blink { 50% { opacity: 0; } }

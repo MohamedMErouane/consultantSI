@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import IntroSplash, { IntroScript } from "@/components/IntroSplash";
 import { profile, siteUrl } from "@/lib/data";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -103,11 +104,13 @@ const jsonLd = [
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
+        <IntroScript />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="font-sans antialiased bg-bg text-ink min-h-screen flex flex-col">
+        <IntroSplash />
         <div className="fixed inset-0 -z-10 bg-blueprint opacity-[0.35]" aria-hidden />
         <div className="fixed inset-x-0 top-0 h-[520px] -z-10 bg-radial-glow" aria-hidden />
         <Navbar />

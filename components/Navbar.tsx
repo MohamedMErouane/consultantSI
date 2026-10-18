@@ -29,7 +29,10 @@ export default function Navbar() {
       )}
     >
       <nav className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="font-mono text-sm tracking-wide text-ink hover:text-accent transition-colors">
+        <Link href="/" aria-label="Mohamed Merouane — home" className="group flex items-center gap-2.5 font-mono text-sm tracking-wide text-ink hover:text-accent transition-colors">
+          <span className="grid h-8 w-8 place-items-center rounded-lg border border-accent/50 bg-accent/10 font-sans text-base font-bold text-accent shadow-glow transition-transform group-hover:rotate-[-6deg]">
+            M
+          </span>
           M.MEROUANE<span className="text-accent">_</span>
         </Link>
 
