@@ -22,7 +22,7 @@ export default function CertificationsPage() {
   return (
     <section className="px-6 pt-40 pb-28">
       <div className="mx-auto max-w-3xl">
-        <SectionHeading
+        <SectionHeading as="h1"
           eyebrow="Credentials"
           title="Certifications"
           description="Professional certificates in full-stack development and blockchain, with ERP and IT service management certifications on the way."

@@ -24,7 +24,7 @@ export default function ContactPage() {
   return (
     <section className="px-6 pt-40 pb-28">
       <div className="mx-auto max-w-5xl">
-        <SectionHeading
+        <SectionHeading as="h1"
           eyebrow="Let's talk"
           title="Contact"
           description="Open to PFE opportunities starting January 2027 — Consultant SI, Business Analyst, Digital Transformation, or Software Engineering tracks."

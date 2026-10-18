@@ -14,7 +14,7 @@ export default function EducationPage() {
   return (
     <section className="px-6 pt-40 pb-28">
       <div className="mx-auto max-w-3xl">
-        <SectionHeading
+        <SectionHeading as="h1"
           eyebrow="Academic Path"
           title="Education"
           description="An engineering degree in information systems management and governance, preceded by a DUT in computer science."

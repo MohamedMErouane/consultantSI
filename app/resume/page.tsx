@@ -35,7 +35,7 @@ export default function ResumePage() {
   return (
     <section className="px-6 pt-40 pb-28">
       <div className="mx-auto max-w-5xl">
-        <SectionHeading
+        <SectionHeading as="h1"
           eyebrow="Résumé"
           title="Resume"
           description="Pick the version that matches your role. All three are one page and ATS-friendly."

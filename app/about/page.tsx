@@ -43,7 +43,7 @@ export default function AboutPage() {
   return (
     <section className="px-6 pt-40 pb-28">
       <div className="mx-auto max-w-4xl">
-        <SectionHeading eyebrow="About" title="Information systems consulting and software development" />
+        <SectionHeading as="h1" eyebrow="About" title="Information systems consulting and software development" />
 
         <Reveal delay={0.1}>
           <p className="mt-8 text-lg text-ink-muted leading-relaxed">{profile.summary}</p>

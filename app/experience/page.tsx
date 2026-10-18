@@ -23,7 +23,7 @@ export default function ExperiencePage() {
   return (
     <section className="px-6 pt-40 pb-28">
       <div className="mx-auto max-w-3xl">
-        <SectionHeading
+        <SectionHeading as="h1"
           eyebrow="Career"
           title="Experience"
           description="Five experiences since 2023: three internships, a full-stack developer role and an ongoing freelance engagement, across public-sector port operations, EdTech, Web3, e-commerce and mobile."

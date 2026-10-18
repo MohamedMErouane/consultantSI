@@ -6,7 +6,9 @@ export default function SectionHeading({
   description,
   align = "left",
   className,
+  as: Tag = "h2",
 }: {
+  as?: "h1" | "h2";
   eyebrow: string;
   title: string;
   description?: string;
@@ -16,9 +18,9 @@ export default function SectionHeading({
   return (
     <div className={cn(align === "center" && "text-center", className)}>
       <span className="eyebrow">{eyebrow}</span>
-      <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-ink text-balance">
+      <Tag className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-ink text-balance">
         {title}
-      </h2>
+      </Tag>
       {description && (
         <p
           className={cn(

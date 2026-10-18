@@ -25,7 +25,7 @@ export default function SkillsPage() {
   return (
     <section className="px-6 pt-40 pb-28">
       <div className="mx-auto max-w-5xl">
-        <SectionHeading
+        <SectionHeading as="h1"
           eyebrow="Capability Map"
           title="Skills"
           description="Consulting competencies and software engineering skills, listed separately."
