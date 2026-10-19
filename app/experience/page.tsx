@@ -26,7 +26,7 @@ export default function ExperiencePage() {
         <SectionHeading as="h1"
           eyebrow="Career"
           title="Experience"
-          description="Five experiences since 2023: three internships, a full-stack developer role and an ongoing freelance engagement, across public-sector port operations, EdTech, Web3, e-commerce and mobile."
+          description="Six experiences since 2023: five internships and a freelance engagement, across public-sector port operations, EdTech, Web3 e-commerce, HR software and mobile."
         />
         <div className="mt-14">
           <Timeline items={items} />

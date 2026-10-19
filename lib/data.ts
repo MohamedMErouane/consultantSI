@@ -14,14 +14,14 @@ export const profile = {
   tagline:
     "I work on both sides of a project: understanding the business process and its requirements, then building and shipping the application that supports it.",
   summary:
-    "Final-year engineering student in Management & Governance of Information Systems at ENSIASD, with five professional experiences: production enterprise web apps at a public port authority, a full school-management platform built end-to-end, blockchain integrations and AI-driven automation. I combine business analysis (requirements, BPMN/UML, functional specifications, ERP) with full-stack development (React, Next.js, TypeScript, Node.js, NestJS, Django, Docker). Seeking a 6-month PFE internship from January 2027 in IS consulting, business analysis or software engineering.",
+    "Final-year engineering student in Management & Governance of Information Systems at ENSIASD, with six professional experiences: enterprise web apps at a public port authority, a full school-management platform built end-to-end, a Web3 e-commerce platform, blockchain integrations and AI-driven automation. I combine business analysis (requirements, BPMN/UML, functional specifications, ERP) with full-stack development (React, Next.js, TypeScript, Node.js, NestJS, Django, Docker). Seeking a 6-month PFE internship from January 2027 in IS consulting, business analysis or software engineering.",
 };
 
 // Organisations I've delivered work for — shown as a credibility strip on the homepage.
-export const workedWith = ["Marsa Maroc", "EtudiaLab", "44you Agency", "Stryve Solution", "Flawko"];
+export const workedWith = ["Marsa Maroc", "EtudiaLab", "Abouelabbas Services", "44you Agency", "Stryve Solution", "Flawko"];
 
 export const highlights = [
-  { value: 5, suffix: "", label: "Professional experiences" },
+  { value: 6, suffix: "", label: "Professional experiences" },
   { value: 4, suffix: "", label: "Apps built solo at EtudiaLab" },
   { value: 6, suffix: "", label: "Certifications earned" },
 ];
@@ -58,8 +58,8 @@ export const experience = [
   {
     company: "EtudiaLab",
     role: "Full-Stack & AI Automation Intern",
-    period: "04/2026 – 06/2026",
-    location: "Morocco",
+    period: "06/2026 – 07/2026",
+    location: "Morocco · Remote",
     bullets: [
       "Designed and built on my own the full architecture of EduTrack, a school-management platform: 3 web apps and 1 mobile app (Django REST Framework back end, React + Vite front end, REST APIs).",
       "Gathered requirements with stakeholders and delivered Figma mockups, UML diagrams, functional specifications, tests and technical / user documentation.",
@@ -79,27 +79,26 @@ export const experience = [
     tags: ["XRPL", "Blockchain", "Game Development", "Freelance"],
   },
   {
-    company: "Marsa Maroc — Port Authority",
+    company: "Abouelabbas Services",
     role: "Full-Stack Developer Intern",
-    period: "06/2025 – 09/2025",
-    location: "Agadir, Morocco",
+    period: "06/2025 – 08/2025",
+    location: "Marrakech, Morocco",
     bullets: [
-      "Built and maintained enterprise applications using React.js, NestJS, TypeScript, Prisma and PostgreSQL.",
-      "Participated in code reviews, functional discussions and production feature delivery.",
-      "Collaborated with multidisciplinary teams to improve maintainability and scalability.",
+      "Designed and built a modern e-commerce web application integrating blockchain and Web3: Next.js front end, NestJS back end, Prisma ORM.",
+      "Implemented cryptocurrency payments with Ethereum via MetaMask and a smart contract, plus role management and security best practices.",
+      "Containerised the application with Docker and automated delivery with GitHub Actions (CI/CD).",
     ],
-    tags: ["React.js", "NestJS", "TypeScript", "Prisma", "PostgreSQL"],
+    tags: ["Next.js", "NestJS", "Prisma", "Docker", "GitHub Actions", "Ethereum"],
   },
   {
     company: "Stryve Solution",
-    role: "Full-Stack Developer",
-    period: "04/2024 – 07/2024",
-    location: "Agadir, Morocco",
+    role: "Full-Stack Developer Intern",
+    period: "04/2024 – 06/2024",
+    location: "Morocco",
     bullets: [
-      "Developed a full-stack e-commerce platform, participating in system design, database modeling and business-workflow implementation.",
-      "Integrated secure transaction mechanisms and contributed to technical documentation.",
+      "Designed and built a web application for employee tracking (système de suivi des employés), from requirements to delivery.",
     ],
-    tags: ["Full-Stack", "E-commerce", "System Design"],
+    tags: ["Full-Stack", "Web Application", "HR"],
   },
   {
     company: "Flawko",
@@ -110,6 +109,18 @@ export const experience = [
       "Developed Android applications in Java and collaborated with design teams to improve user experience.",
     ],
     tags: ["Android", "Java", "UX Collaboration"],
+  },
+  {
+    company: "Marsa Maroc — Port Authority",
+    role: "Full-Stack Developer Intern",
+    period: "06/2023 – 08/2023",
+    location: "Agadir, Morocco",
+    bullets: [
+      "Built and maintained enterprise applications using React.js, NestJS, TypeScript, Prisma and PostgreSQL.",
+      "Participated in code reviews, functional discussions and production feature delivery.",
+      "Collaborated with multidisciplinary teams to improve maintainability and scalability.",
+    ],
+    tags: ["React.js", "NestJS", "TypeScript", "Prisma", "PostgreSQL"],
   },
 ];
 
