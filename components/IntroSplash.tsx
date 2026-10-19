@@ -7,9 +7,11 @@
 //  - Never shown with prefers-reduced-motion, or to crawlers without JS:
 //    without the html[data-intro] flag the overlay is display:none.
 //  - Any click / key / scroll skips it.
+//  - Never shown on /forum (QR-code landing page: content must appear instantly).
 
 const decide = `(function(){try{
   var d=document.documentElement;
+  if(location.pathname.indexOf('/forum')===0)return;
   if(sessionStorage.getItem('mm-intro'))return;
   if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   sessionStorage.setItem('mm-intro','1');
