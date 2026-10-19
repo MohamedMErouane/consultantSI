@@ -6,28 +6,34 @@ import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = pageMetadata({
   title: "Resume",
-  description: "Download Mohamed Merouane's CV — Full-Stack Software Engineer (EN / FR) and Business Analyst / ERP Consultant (FR).",
+  description: "Download Mohamed Merouane's CV — IS / ERP Consultant and Full-Stack Developer, in French and English.",
   path: "/resume",
 });
 
 const cvs = [
   {
-    title: "Full-Stack Software Engineer",
+    title: "Consultant SI / ERP — Business Analyst",
+    lang: "FR",
+    href: "/cv-consultant-si-fr.pdf",
+    note: "Odoo 17, BPMN, analyse fonctionnelle, recette, conduite du changement",
+  },
+  {
+    title: "IS / ERP Consultant — Business Analyst",
     lang: "EN",
-    href: "/resume.pdf",
-    note: "React, Next.js, TypeScript, Node.js, Python",
+    href: "/cv-consultant-si-en.pdf",
+    note: "Odoo 17, BPMN, functional analysis, UAT, change management",
   },
   {
     title: "Développeur Full-Stack",
     lang: "FR",
-    href: "/resume-full-stack-fr.pdf",
-    note: "React, Next.js, NestJS, Django, Docker",
+    href: "/cv-full-stack-fr.pdf",
+    note: "React, Next.js, NestJS, Django, Docker, Kubernetes",
   },
   {
-    title: "Business Analyst / Consultant ERP",
-    lang: "FR",
-    href: "/resume-business-analyst-fr.pdf",
-    note: "Analyse fonctionnelle, BPMN, Odoo, recette",
+    title: "Full-Stack Developer",
+    lang: "EN",
+    href: "/cv-full-stack-en.pdf",
+    note: "React, Next.js, TypeScript, Node.js, Django, Kubernetes",
   },
 ];
 
@@ -38,10 +44,10 @@ export default function ResumePage() {
         <SectionHeading as="h1"
           eyebrow="Résumé"
           title="Resume"
-          description="Pick the version that matches your role. All three are one page and ATS-friendly."
+          description="Pick the version that matches your role. All four are one page and ATS-friendly."
         />
 
-        <div className="mt-10 grid md:grid-cols-3 gap-4">
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {cvs.map((cv, i) => (
             <Reveal key={cv.href} delay={0.06 * i}>
               <div className="glass rounded-xl p-5 h-full flex flex-col">
@@ -75,7 +81,7 @@ export default function ResumePage() {
 
         <Reveal delay={0.18}>
           <div className="mt-10 glass rounded-2xl overflow-hidden hidden sm:block">
-            <iframe src="/resume.pdf" title="Mohamed Merouane — Resume" className="w-full h-[85vh] bg-white" />
+            <iframe src="/cv-full-stack-en.pdf" title="Mohamed Merouane — Resume" className="w-full h-[85vh] bg-white" />
           </div>
         </Reveal>
       </div>
