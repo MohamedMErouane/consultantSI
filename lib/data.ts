@@ -10,6 +10,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/mohamedmerouane",
   github: "https://github.com/MohamedMErouane",
   site: "mohamedmerouane.me",
+  photo: "/headshot.jpg",
   lastUpdated: "Oct 2026",
   tagline:
     "I work on both sides of a project: understanding the business process and its requirements, then building and shipping the application that supports it.",
@@ -58,7 +59,7 @@ export const experience = [
   {
     company: "EtudiaLab",
     role: "Full-Stack & AI Automation Intern",
-    period: "06/2026 – 07/2026",
+    period: "05/2026 – 07/2026",
     location: "Morocco · Remote",
     bullets: [
       "Designed and built on my own the full architecture of EduTrack, a school-management platform: 3 web apps and 1 mobile app (Django REST Framework back end, React + Vite front end, REST APIs).",
@@ -168,7 +169,7 @@ export const coreAreas = [
 export const nav = [
   { href: "/experience", label: "Experience" },
   { href: "/projects", label: "Projects" },
-  { href: "/skills", label: "Skills" },
+  { href: "/journey", label: "Journey" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -179,6 +180,7 @@ export const allRoutes = [
   { href: "/about", label: "About" },
   { href: "/experience", label: "Experience" },
   { href: "/projects", label: "Projects" },
+  { href: "/journey", label: "Journey" },
   { href: "/skills", label: "Skills" },
   { href: "/education", label: "Education" },
   { href: "/certifications", label: "Certifications" },

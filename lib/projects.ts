@@ -117,7 +117,7 @@ export const projects: Project[] = [
     slug: "edutrack-school-management-platform",
     title: "EduTrack — School Management Platform (EtudiaLab)",
     shortTitle: "EduTrack",
-    period: "04/2026 – 06/2026",
+    period: "05/2026 – 07/2026",
     category: "Full-Stack / AI Automation",
     context: "Internship at EtudiaLab, a Moroccan EdTech startup",
     role: "Sole architect and full-stack developer",

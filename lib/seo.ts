@@ -9,12 +9,16 @@ export function pageMetadata({
   description,
   path,
   image = "/opengraph-image",
+  imageWidth = 1200,
+  imageHeight = 630,
   keywords,
 }: {
   title: string;
   description: string;
   path: string;
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   keywords?: string[];
 }): Metadata {
   const fullTitle = `${title} — ${profile.name}`;
@@ -30,7 +34,7 @@ export function pageMetadata({
       description,
       siteName: profile.name,
       locale: "en_US",
-      images: [{ url: image, width: 1200, height: 630, alt: fullTitle }],
+      images: [{ url: image, width: imageWidth, height: imageHeight, alt: fullTitle }],
     },
     twitter: {
       card: "summary_large_image",

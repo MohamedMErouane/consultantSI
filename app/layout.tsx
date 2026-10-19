@@ -76,6 +76,7 @@ const jsonLd = [
     givenName: "Mohamed",
     familyName: "Merouane",
     url: siteUrl,
+    image: `${siteUrl}${profile.photo}`,
     email: `mailto:${profile.email}`,
     jobTitle: "Business Analyst & Full-Stack Engineer (engineering student)",
     description: defaultDescription,

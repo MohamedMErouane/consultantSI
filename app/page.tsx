@@ -1,7 +1,9 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Download, FolderKanban, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import RoleTyping from "@/components/RoleTyping";
+import { journey } from "@/lib/journey";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ProjectCard from "@/components/ProjectCard";
@@ -23,6 +25,15 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl grid lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-16 items-center">
           <div>
             <Reveal>
+              <div className="flex flex-wrap items-center gap-4">
+              <Image
+                src={profile.photo}
+                alt="Portrait of Mohamed Merouane"
+                width={200}
+                height={200}
+                priority
+                className="h-20 w-20 rounded-full object-cover ring-2 ring-accent/50 ring-offset-4 ring-offset-bg"
+              />
               <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1.5 font-mono text-[11px] tracking-[0.14em] uppercase text-accent">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60 animate-ping" />
@@ -30,6 +41,7 @@ export default function HomePage() {
                 </span>
                 Available for a 6-month PFE · Jan 2027
               </span>
+              </div>
             </Reveal>
 
             <Reveal delay={0.08}>
@@ -230,6 +242,37 @@ export default function HomePage() {
               className="mt-8 inline-flex items-center gap-2 text-sm text-accent hover:gap-3 transition-all"
             >
               View full skill set <ArrowRight size={15} />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ---------------- JOURNEY ---------------- */}
+      <section className="px-6 py-24 border-t border-border-soft">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            eyebrow="Journey"
+            title="Behind the CV, in real photos"
+            description="Internships, events and milestones, each with a short story."
+          />
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {journey.slice(0, 3).map((p, i) => (
+              <Reveal key={p.slug} delay={i * 0.06}>
+                <Link href={`/journey/${p.slug}`} className="group block overflow-hidden rounded-2xl border border-border-soft bg-bg-elevated hover:border-accent/40 transition-colors h-full">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image src={p.cover.src} alt={p.cover.alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                  <div className="p-5">
+                    <p className="font-mono text-[11px] uppercase tracking-wide"><span className="text-accent">{p.category}</span> <span className="text-ink-faint">· {p.dateLabel}</span></p>
+                    <p className="mt-2 text-ink font-medium group-hover:text-accent transition-colors text-balance">{p.title}</p>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={0.2}>
+            <Link href="/journey" className="mt-8 inline-flex items-center gap-2 text-sm text-accent hover:gap-3 transition-all">
+              See the whole journey <ArrowRight size={15} />
             </Link>
           </Reveal>
         </div>
