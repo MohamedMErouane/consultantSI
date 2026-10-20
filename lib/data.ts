@@ -64,7 +64,7 @@ export const experience = [
     period: "05/2026 – 07/2026",
     location: "Morocco · Remote",
     bullets: [
-      "Designed the architecture and built on my own EduTrack, the attendance-management module of a school platform: 3 role-based web apps plus mobile views for students and parents (Django REST Framework, React + Vite, PostgreSQL, Docker).",
+      "Designed the architecture and built on my own EduTrack, the attendance-management module of a school platform: 3 role-based web apps and a mobile app for students and parents (Django REST Framework, React + Vite, PostgreSQL, Docker).",
       "Gathered requirements with stakeholders and delivered Figma mockups, UML diagrams, functional specifications, Postman-tested APIs and technical / user documentation.",
       "Used spec-driven, AI-assisted development with GitHub Spec Kit (specification → plan → tasks → code), working in weekly Agile sprints.",
     ],

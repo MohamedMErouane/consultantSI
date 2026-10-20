@@ -139,7 +139,7 @@ export const projects: Project[] = [
     problem:
       "EtudiaLab needed a working prototype of its school-management platform, with absence management at its core: teachers record attendance, parents are alerted, absences get justified, and the school sees which students are at risk.",
     solution:
-      "I designed the architecture and built the prototype alone: three role-based React apps (school, teacher, admin) plus mobile views for students and parents, on a Django REST back end of 13 apps, 16 data models and 20+ endpoints, all started with one Docker Compose command.",
+      "I designed the architecture and built the prototype alone: three role-based React apps (school, teacher, admin) plus a mobile app for students and parents, on a Django REST back end of 13 apps, 16 data models and 20+ endpoints, all started with one Docker Compose command.",
     impact:
       "Delivered in 8 weekly sprints: 7 EduTrack screens taken from Figma mockups to working code, with weekly progress reports to my supervisor.",
     overview:
@@ -150,7 +150,7 @@ export const projects: Project[] = [
       "Worked spec-first with GitHub Spec Kit: each feature went from a written specification to a technical plan and a task list before AI-assisted implementation, so the specs stayed the source of truth.",
       "Built the back end with Django REST Framework: 13 Django apps and 16 models, JWT authentication with role-based permissions, and 20+ REST endpoints tested with Postman.",
       "Built the teacher side: a dashboard with daily sessions and alerts, an attendance sheet (present / absent / late, with each student's running absence count) and a weekly class report with PDF and CSV export.",
-      "Built the student and parent side as mobile views: attendance history, alerts, and a 4-step wizard to justify an absence with a reason and an uploaded document, which the teacher then approves or rejects.",
+      "Built the student and parent mobile app: attendance history, alerts, and a 4-step wizard to justify an absence with a reason and an uploaded document, which the teacher then approves or rejects.",
       "Built the school-admin view: attendance by class, at-risk students and one-click notification of their parents.",
       "Automated notifications with Django signals, so recording an absence or reviewing a justification notifies the right people without coupling the modules.",
       "Containerised the stack with Docker Compose (front end, API, PostgreSQL) and delivered a weekly report to my supervisor.",
@@ -176,7 +176,7 @@ export const projects: Project[] = [
     results: [
       "7 screens delivered from mockup to code: teacher dashboard, attendance sheet, class report, student/parent mobile views, justification wizard and school-admin overview.",
       "Back end of 13 Django apps, 16 models and 20+ documented REST endpoints, started in one command with Docker Compose.",
-      "Next steps I documented: real-time updates with WebSockets, a native mobile app, server-side PDF generation and an automated test suite.",
+      "Next steps I documented: real-time updates with WebSockets, server-side PDF generation and an automated test suite.",
     ],
     skills: ["Software architecture", "Data modelling", "REST API design", "Role-based security", "UI/UX in Figma", "Autonomy"],
     media: [
@@ -413,34 +413,52 @@ export const projects: Project[] = [
   },
   {
     slug: "web3-ecommerce-platform",
-    title: "Web3 E-commerce Platform (Abouelabbas Services)",
+    title: "HMTECH — Web3 E-commerce Platform (Abouelabbas Services)",
     shortTitle: "Web3 e-commerce",
     period: "06/2025 – 08/2025",
     category: "Full-Stack / Web3",
     context: "Internship at Abouelabbas Services, Marrakech",
     role: "Full-stack developer intern",
-    stack: ["Next.js", "NestJS", "Prisma", "Docker", "GitHub Actions", "Ethereum", "MetaMask"],
-    problem: "Build a modern online store where customers can also pay in cryptocurrency, securely.",
+    stack: ["Next.js", "NestJS", "Prisma", "Ethereum", "MetaMask", "Smart contracts", "PayPal", "Docker", "GitHub Actions"],
+    problem: "Build a modern online electronics store where customers can pay the usual ways, or in cryptocurrency, securely.",
     solution:
-      "Designed and developed the full application — Next.js front end, NestJS back end with Prisma — with Ethereum payments through MetaMask and a smart contract, role management, Docker and a GitHub Actions CI/CD pipeline.",
+      "Designed and developed the full application: Next.js storefront, NestJS back end with Prisma, PayPal and Ethereum payments (MetaMask + smart contract), customer and admin roles, Docker and a GitHub Actions CI/CD pipeline.",
     impact: "Delivered and defended a complete e-commerce application combining a classic shopping flow with Web3 payments.",
     overview:
-      "During my internship at Abouelabbas Services I designed and built a complete e-commerce web application that integrates blockchain and Web3: customers shop as on any online store, and can pay with Ethereum through their MetaMask wallet.",
+      "During my internship at Abouelabbas Services I designed and built HMTECH, an e-commerce web application that integrates blockchain and Web3: customers shop as on any online store and pay by PayPal, card, bank transfer or cash on delivery, or with Ethereum through their MetaMask wallet. I started from a UML use-case model covering customers, admins, the payment system and the blockchain.",
     contributions: [
-      "Built the front end with Next.js and the back end with NestJS and Prisma.",
-      "Integrated cryptocurrency payments with Ethereum via MetaMask and a smart contract.",
-      "Implemented role management and applied security best practices.",
+      "Modelled the system first with a UML use-case diagram: 11 use cases for customers and admins, plus PayPal and the blockchain as external systems.",
+      "Built the storefront with Next.js: home page, catalogue with filters, cart with coupon codes, wishlist, checkout and a customer account with order history.",
+      "Built the back end with NestJS and Prisma, with sign-up by email or Google account and separate customer and admin roles.",
+      "Integrated payments: PayPal (and card through PayPal), plus Ethereum via MetaMask and a smart contract, with admin verification of blockchain payments.",
+      "Built the admin side: manage products, users and orders, and update order status so customers can track their order.",
       "Containerised the application with Docker and set up CI/CD with GitHub Actions.",
-      "Kept a clean, scalable architecture following modern development standards.",
     ],
     challenges: [
       {
         title: "Classic UX, new payment rails",
-        text: "Shoppers expect a normal checkout; the design had to hide blockchain complexity behind a familiar flow.",
+        text: "Shoppers expect a normal checkout, so 'Pay with ETH' sits next to PayPal and cash on delivery, hiding the blockchain complexity behind a familiar flow.",
+      },
+      {
+        title: "Trusting a crypto payment",
+        text: "A wallet transaction is not a bank confirmation, so orders paid in ETH go through a verification step on the blockchain before they are processed.",
       },
     ],
-    results: ["Complete application delivered and defended at the end of the internship."],
-    skills: ["Full-stack development", "Web3 integration", "Smart contracts", "DevOps (Docker, CI/CD)"],
+    results: [
+      "Complete application delivered and defended at the end of the internship.",
+      "Five payment methods in one checkout, including Ethereum through MetaMask.",
+    ],
+    skills: ["Full-stack development", "Web3 integration", "Smart contracts", "Payment integration", "UML", "DevOps (Docker, CI/CD)"],
+    media: [
+      { src: "/projects/web3-ecommerce-platform/checkout-paypal-eth.webp", width: 935, height: 439, thumb: true, alt: "HMTECH checkout with PayPal, card and Pay with ETH options", caption: "Checkout: bank transfer, cash on delivery, PayPal or card, or pay with Ethereum." },
+      { src: "/projects/web3-ecommerce-platform/home.webp", width: 935, height: 439, alt: "HMTECH store home page", caption: "Storefront home page." },
+      { src: "/projects/web3-ecommerce-platform/shop.webp", width: 935, height: 439, alt: "HMTECH product catalogue with filters", caption: "Catalogue with category, size and colour filters." },
+      { src: "/projects/web3-ecommerce-platform/cart.webp", width: 935, height: 439, alt: "HMTECH shopping cart with coupon code", caption: "Cart with quantities, coupon code and order summary." },
+      { src: "/projects/web3-ecommerce-platform/sign-in.webp", width: 935, height: 439, alt: "HMTECH sign-in page with Google option", caption: "Sign-in by email or Google account." },
+      { src: "/projects/web3-ecommerce-platform/customer-orders.webp", width: 795, height: 367, alt: "HMTECH customer account with order history", caption: "Customer account: order history and status tracking." },
+      { src: "/projects/web3-ecommerce-platform/wishlist.webp", width: 935, height: 439, alt: "HMTECH wishlist page", caption: "Wishlist with stock status." },
+      { src: "/projects/web3-ecommerce-platform/uml-use-case.webp", width: 938, height: 665, alt: "UML use-case diagram of the e-commerce system", caption: "UML use cases: customer and admin flows, with PayPal and the blockchain as external systems." },
+    ],
   },
   {
     slug: "enterprise-management-platform",
