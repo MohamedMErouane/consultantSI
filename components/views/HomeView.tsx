@@ -72,6 +72,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
               <Image
                 src={profile.photo}
                 alt={t.photoAlt}
+                unoptimized
                 width={200}
                 height={200}
                 priority

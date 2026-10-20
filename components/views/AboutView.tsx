@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, GraduationCap, BadgeCheck, FileText } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { getContent } from "@/lib/content";
 import { projects } from "@/lib/projects";
+import { siteUrl } from "@/lib/data";
 import { type Lang, localePath } from "@/lib/i18n";
 
 const T = {
@@ -47,10 +49,44 @@ export default function AboutView({ lang }: { lang: Lang }) {
     { href: "/resume", label: t.links[2], icon: FileText },
   ];
 
+  // ProfilePage: tells search engines this page is the official profile of the person.
+  const profileJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    url: `${siteUrl}${localePath(lang, "/about")}`,
+    inLanguage: lang,
+    dateModified: "2026-10-20",
+    mainEntity: {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: profile.name,
+      alternateName: "Merouane Mohamed",
+      url: siteUrl,
+      image: `${siteUrl}${profile.photo}`,
+      description: profile.identity,
+      jobTitle: "Business Analyst & Full-Stack Developer",
+      sameAs: [profile.linkedin, profile.github],
+    },
+  };
+
   return (
     <section className="px-6 pt-40 pb-28">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }} />
       <div className="mx-auto max-w-4xl">
-        <SectionHeading as="h1" eyebrow={t.eyebrow} title={t.title} />
+        <div className="flex flex-col-reverse sm:flex-row sm:items-end sm:justify-between gap-6">
+          <SectionHeading as="h1" eyebrow={t.eyebrow} title={t.title} />
+          <figure className="shrink-0">
+            <Image
+              src={profile.photo}
+              alt={profile.name}
+              unoptimized
+              width={profile.photoSize}
+              height={profile.photoSize}
+              className="h-28 w-28 rounded-2xl object-cover ring-2 ring-accent/40"
+            />
+            <figcaption className="sr-only">{profile.name}</figcaption>
+          </figure>
+        </div>
 
         <Reveal delay={0.1}>
           <p className="mt-8 text-lg text-ink-muted leading-relaxed">{profile.summary}</p>

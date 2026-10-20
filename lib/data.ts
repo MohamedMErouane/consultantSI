@@ -10,7 +10,10 @@ export const profile = {
   linkedin: "https://linkedin.com/in/mohamedmerouane",
   github: "https://github.com/MohamedMErouane",
   site: "mohamedmerouane.me",
-  photo: "/headshot.jpg",
+  photo: "/mohamed-merouane.jpg",
+  photoSize: 200,
+  // One-line description reused everywhere (structured data, profiles) so Google ties them together.
+  identity: "Mohamed Merouane is a Moroccan information systems engineering student at ENSIASD, business analyst and full-stack developer.",
   lastUpdated: "Oct 2026",
   tagline:
     "I work on both sides of a project: understanding the business process and its requirements, then building and shipping the application that supports it.",
