@@ -24,7 +24,7 @@ export default function HomePage() {
       <section className="relative pt-36 sm:pt-40 pb-20 px-6">
         <div className="mx-auto max-w-6xl grid lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-16 items-center">
           <div>
-            <Reveal>
+            <div>
               <div className="flex flex-wrap items-center gap-4">
               <Image
                 src={profile.photo}
@@ -42,29 +42,29 @@ export default function HomePage() {
                 Available for a 6-month PFE · Jan 2027
               </span>
               </div>
-            </Reveal>
+            </div>
 
-            <Reveal delay={0.08}>
+            <div>
               <h1 className="mt-6 text-5xl sm:text-7xl font-semibold tracking-tight leading-[1.02] text-balance">
                 <span className="text-ink">Mohamed</span>{" "}
                 <span className="bg-gradient-to-r from-accent via-sky-300 to-primary bg-clip-text text-transparent">Merouane</span>
               </h1>
-            </Reveal>
+            </div>
 
-            <Reveal delay={0.14}>
+            <div>
               <p className="mt-5 text-xl sm:text-2xl font-mono text-ink-muted min-h-[2.25rem]">
                 <span className="text-ink-faint">&gt; </span>
                 <RoleTyping roles={profile.roles} />
               </p>
-            </Reveal>
+            </div>
 
-            <Reveal delay={0.2}>
+            <div>
               <p className="mt-6 text-ink-muted text-lg leading-relaxed max-w-xl">
                 Final-year Information Systems engineering student at ENSIASD. {profile.tagline}
               </p>
-            </Reveal>
+            </div>
 
-            <Reveal delay={0.26}>
+            <div>
               <div className="mt-9 flex flex-wrap items-center gap-3">
                 <Link
                   href="/resume"
@@ -97,17 +97,17 @@ export default function HomePage() {
                   ))}
                 </div>
               </div>
-            </Reveal>
+            </div>
 
-            <Reveal delay={0.32}>
+            <div>
               <p className="mt-6 inline-flex items-center gap-2 text-xs text-ink-faint font-mono">
                 <MapPin size={13} /> {profile.location} · {profile.mobility}
               </p>
-            </Reveal>
+            </div>
           </div>
 
           {/* Signature element: a "spec panel" — case-file styling that speaks the consultant's own language */}
-          <Reveal delay={0.2} y={22}>
+          <div>
             <div className="relative">
               <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-primary/20 blur-3xl" aria-hidden />
               <div className="glass rounded-2xl overflow-hidden shadow-glow">
@@ -135,11 +135,11 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </Reveal>
+          </div>
         </div>
 
         {/* Key numbers */}
-        <Reveal delay={0.38}>
+        <div>
           <div className="mx-auto max-w-6xl mt-16 grid grid-cols-3 rounded-2xl glass divide-x divide-border-soft">
             {highlights.map((h) => (
               <div key={h.label} className="px-4 sm:px-8 py-6 text-center sm:text-left">
@@ -150,7 +150,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </Reveal>
+        </div>
       </section>
 
       {/* ---------------- WORKED WITH ---------------- */}
@@ -175,20 +175,22 @@ export default function HomePage() {
             title="From the business need to software people actually use"
             description="Most projects fail between the meeting room and the code. I cover the whole path, so nothing gets lost in translation."
           />
-          <ol className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 relative">
-            <div className="hidden lg:block absolute top-9 left-[12%] right-[12%] h-px bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0" aria-hidden />
+          <div className="relative mt-12">
+          <div className="hidden lg:block absolute top-9 left-[12%] right-[12%] h-px bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0" aria-hidden />
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 relative">
             {approach.map((a, i) => (
-              <Reveal key={a.step} delay={i * 0.07}>
-                <li className="relative glass rounded-xl p-5 h-full">
+              <Reveal key={a.step} delay={i * 0.07} as="li">
+                <div className="relative glass rounded-xl p-5 h-full">
                   <span className="grid h-9 w-9 place-items-center rounded-full border border-accent/40 bg-bg font-mono text-xs text-accent">
                     {a.step}
                   </span>
                   <p className="mt-4 text-ink font-medium">{a.title}</p>
                   <p className="text-ink-muted text-sm mt-1.5 leading-relaxed">{a.text}</p>
-                </li>
+                </div>
               </Reveal>
             ))}
           </ol>
+          </div>
         </div>
       </section>
 

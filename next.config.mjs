@@ -6,6 +6,10 @@ const nextConfig = {
     return [
       { source: "/projects/odoo-erp-deployment", destination: "/projects", permanent: true },
       { source: "/projects/enterprise-management-platform", destination: "/projects", permanent: true },
+      // Old CV file names, replaced by the cv-*.pdf set.
+      { source: "/resume.pdf", destination: "/cv-full-stack-en.pdf", permanent: true },
+      { source: "/resume-full-stack-fr.pdf", destination: "/cv-full-stack-fr.pdf", permanent: true },
+      { source: "/resume-business-analyst-fr.pdf", destination: "/cv-consultant-si-fr.pdf", permanent: true },
     ];
   },
   images: {
