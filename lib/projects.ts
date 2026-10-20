@@ -178,7 +178,7 @@ export const projects: Project[] = [
     period: "2024",
     category: "Full-Stack / Real-time",
     context: "DUT final-year project (PFE) at EST Essaouira, team of two",
-    role: "Full-stack developer (team project with a fellow student)",
+    role: "Front-end developer, video rooms and real-time chat (team of two)",
     stack: ["Next.js", "React", "TypeScript", "NestJS", "PostgreSQL", "Prisma", "Socket.io", "WebRTC (PeerJS)", "JWT", "Chart.js"],
     problem:
       "Students who study remotely juggle separate apps for video calls, chat, timers and to-do lists, and lose the motivation of studying with others.",
@@ -189,10 +189,10 @@ export const projects: Project[] = [
     overview:
       "StudyHub is a full-stack web app that helps students study together. It brings video study rooms, real-time chat, Pomodoro sessions, to-do lists, study-time tracking and a leaderboard into one place. We built it as a team of two for our DUT final-year project at EST Essaouira.",
     contributions: [
-      "Built a NestJS REST API organised in modules (auth, users, to-dos, Pomodoro, messages, connected users) on PostgreSQL with Prisma.",
-      "Implemented authentication end to end: sign-up with email activation, login with JWT, hashed passwords (bcrypt), password reset by email, and protected routes through Next.js middleware.",
-      "Added real-time features: chat over WebSockets (Socket.io) with an online-users list, and peer-to-peer video study rooms with WebRTC (PeerJS).",
-      "Built the study tools: a Pomodoro timer that records study time per user, weekly study-hours charts (Chart.js), a to-do list and a leaderboard ranked by hours studied.",
+      "My part: built the front end of the platform in Next.js, React and TypeScript (pages, navigation and the study tools' interfaces).",
+      "My part: built the video study rooms, peer-to-peer video calls with WebRTC (PeerJS) and the shared Pomodoro timer inside the room.",
+      "My part: built the real-time chat rooms on the client, messaging over WebSockets (Socket.io) with a live list of connected users.",
+      "Team: a NestJS API on PostgreSQL with Prisma, with authentication (email activation, JWT, bcrypt, password reset by email), to-dos, study-time tracking, charts and a leaderboard.",
     ],
     challenges: [
       { title: "Real-time state", text: "Keeping chat messages and the list of connected users consistent across clients meant handling connections and disconnections on the WebSocket gateway, not only in the UI." },
