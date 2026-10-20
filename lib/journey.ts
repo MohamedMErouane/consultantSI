@@ -1,7 +1,9 @@
 // Journey — real moments from my path, each backed by real photos.
 // Add a story: drop photos in /public/journey and add an entry below (newest first is not required; the list is sorted).
 
-export type JourneyPhoto = { src: string; alt: string; caption?: string; width: number; height: number };
+import type { Media } from "./media";
+
+export type JourneyPhoto = Media;
 
 export type JourneyPost = {
   slug: string;

@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import type { JourneyPhoto } from "@/lib/journey";
+import type { Media } from "@/lib/media";
 
 // Photo grid with a keyboard-accessible full-screen viewer.
-export default function PhotoGallery({ photos }: { photos: JourneyPhoto[] }) {
+export default function PhotoGallery({ photos }: { photos: Media[] }) {
   const [open, setOpen] = useState<number | null>(null);
   const close = useCallback(() => setOpen(null), []);
   const step = useCallback(
@@ -37,7 +37,7 @@ export default function PhotoGallery({ photos }: { photos: JourneyPhoto[] }) {
     <>
       <div className={photos.length === 1 ? "grid" : "grid gap-4 sm:grid-cols-2"}>
         {photos.map((p, i) => (
-          <figure key={p.src} className="group">
+          <figure key={p.src} className={p.wide && photos.length > 1 ? "group sm:col-span-2" : "group"}>
             <button
               type="button"
               onClick={() => setOpen(i)}
@@ -49,7 +49,7 @@ export default function PhotoGallery({ photos }: { photos: JourneyPhoto[] }) {
                 alt={p.alt}
                 width={p.width}
                 height={p.height}
-                sizes="(min-width: 640px) 50vw, 100vw"
+                sizes={p.wide ? "(min-width: 896px) 896px, 100vw" : "(min-width: 640px) 50vw, 100vw"}
                 className="mx-auto h-auto max-h-[520px] w-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
               />
             </button>

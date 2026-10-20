@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Briefcase, Calendar, CheckCircle2, Github, User } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Badge from "@/components/Badge";
+import PhotoGallery from "@/components/PhotoGallery";
 import { pageMetadata } from "@/lib/seo";
 import { getProject, projects } from "@/lib/projects";
 import { profile, siteUrl } from "@/lib/data";
@@ -48,6 +49,7 @@ export default async function ProjectPage({ params }: Params) {
       headline: p.title,
       description: p.overview,
       url,
+      ...(p.media?.length ? { image: p.media.map((m) => `${siteUrl}${m.src}`) } : {}),
       genre: p.category,
       keywords: [...p.stack, ...p.skills].join(", "),
       author: { "@type": "Person", name: profile.name, url: siteUrl },
@@ -112,6 +114,15 @@ export default async function ProjectPage({ params }: Params) {
             ))}
           </dl>
         </Reveal>
+
+        {/* Screenshots & diagrams */}
+        {p.media && p.media.length > 0 && (
+          <section className="mt-14">
+            <h2 className="text-2xl font-semibold text-ink">Screenshots &amp; diagrams</h2>
+            <p className="mt-1 text-sm text-ink-faint">Captured from the running project. Click to view full screen.</p>
+            <div className="mt-6"><PhotoGallery photos={p.media} /></div>
+          </section>
+        )}
 
         {/* Problem / Solution / Impact */}
         <div className="mt-14 grid md:grid-cols-3 gap-4">

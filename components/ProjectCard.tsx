@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Badge from "@/components/Badge";
@@ -6,11 +7,23 @@ import type { Project } from "@/lib/projects";
 export type { Project };
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const thumb = project.media?.find((m) => m.thumb) ?? project.media?.[0];
   return (
     <Link
       href={`/projects/${project.slug}`}
       className="group glass rounded-2xl p-6 sm:p-7 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-accent/40"
     >
+      {thumb && (
+        <div className="relative -mx-6 -mt-6 sm:-mx-7 sm:-mt-7 mb-6 aspect-[16/9] overflow-hidden rounded-t-2xl border-b border-border-soft bg-bg">
+          <Image
+            src={thumb.src}
+            alt={thumb.alt}
+            fill
+            sizes="(min-width: 1024px) 560px, 100vw"
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        </div>
+      )}
       <div className="flex items-start justify-between gap-3">
         <div>
           <span className="eyebrow">{project.category}</span>

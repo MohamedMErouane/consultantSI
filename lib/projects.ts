@@ -1,5 +1,6 @@
 // Project case studies. Each entry powers a card on /projects and its own page at /projects/[slug].
 // Only facts that appear on the CV or were actually delivered — no invented metrics.
+import type { Media } from "./media";
 
 export type Project = {
   slug: string;
@@ -20,6 +21,7 @@ export type Project = {
   skills: string[];
   featured?: boolean;
   repoUrl?: string;
+  media?: Media[]; // the item marked `thumb` (or the first) is the card image
 };
 
 export const projects: Project[] = [
@@ -67,6 +69,14 @@ export const projects: Project[] = [
     skills: ["Business process analysis", "BPMN 2.0", "Gap analysis", "Functional specification", "Odoo development", "Change management"],
     featured: true,
     repoUrl: "https://github.com/MohamedMErouane/odoo-p2p-process-redesign",
+    media: [
+      { src: "/projects/procure-to-pay-redesign-odoo/bpmn-to-be.webp", width: 1800, height: 690, wide: true, alt: "To-Be Procure-to-Pay process modelled in BPMN 2.0", caption: "To-Be process (BPMN 2.0): approval by amount band, three-way match before a bill can be posted, and a finance-manager exception path." },
+      { src: "/projects/procure-to-pay-redesign-odoo/three-way-match-exception.webp", width: 1800, height: 1075, thumb: true, alt: "Odoo vendor bill blocked by a three-way match exception", caption: "A vendor bill blocked by the three-way match: unit price 7.5% above the PO, and 200 pallets billed for 150 received." },
+      { src: "/projects/procure-to-pay-redesign-odoo/po-waiting-director-approval.webp", width: 1800, height: 925, alt: "Odoo purchase order waiting for Purchase Director approval", caption: "A $174,800 order (Odoo demo company) falls in Band C, so only a Purchase Director can approve it." },
+      { src: "/projects/procure-to-pay-redesign-odoo/approval-log-lead-time.webp", width: 1800, height: 842, alt: "Approval log on an Odoo purchase order with approval lead time", caption: "Every approval is logged with its band, approver and lead time, so the bottleneck can be measured." },
+      { src: "/projects/procure-to-pay-redesign-odoo/approval-matrix.webp", width: 1800, height: 300, wide: true, alt: "Configurable approval matrix in Odoo", caption: "The approval matrix is configuration, not code: one approver group per amount band." },
+      { src: "/projects/procure-to-pay-redesign-odoo/bpmn-as-is.webp", width: 1800, height: 619, wide: true, alt: "As-Is Procure-to-Pay process modelled in BPMN 2.0", caption: "As-Is process (BPMN 2.0), mapped before the redesign." },
+    ],
   },
   {
     slug: "kubernetes-devops-platform",
@@ -112,6 +122,10 @@ export const projects: Project[] = [
     skills: ["Kubernetes", "CI/CD", "Infrastructure as Code", "Container security", "Observability", "SRE practices"],
     featured: true,
     repoUrl: "https://github.com/MohamedMErouane/k8s-devops-platform",
+    media: [
+      { src: "/projects/kubernetes-devops-platform/architecture.webp", width: 1800, height: 1080, wide: true, thumb: true, alt: "Architecture of the Linkly Kubernetes platform and its CI/CD pipeline", caption: "Request path, monitoring and the CI/CD pipeline that validates every push." },
+      { src: "/projects/kubernetes-devops-platform/linkly-app.webp", width: 1160, height: 900, alt: "Linkly URL shortener web interface listing short links and click counts", caption: "Linkly, the demo workload: a URL shortener backed by PostgreSQL, with click counts." },
+    ],
   },
   {
     slug: "edutrack-school-management-platform",
