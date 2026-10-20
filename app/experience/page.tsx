@@ -6,7 +6,7 @@ import { experience } from "@/lib/data";
 
 export const metadata: Metadata = pageMetadata({
   title: "Experience",
-  description: "Professional experience — internships and a full-stack developer role in web development, AI automation and enterprise systems.",
+  description: "Professional experience — internships and a full-stack developer role in web development, AI-assisted development and enterprise systems.",
   path: "/experience",
 });
 

@@ -135,7 +135,7 @@ export const projects: Project[] = [
     category: "Architecture / Full-Stack",
     context: "8-week internship at EtudiaLab, a Moroccan EdTech startup",
     role: "Technical architect and sole full-stack developer",
-    stack: ["Django 4.2", "Django REST Framework", "SimpleJWT", "React 18", "Vite", "PostgreSQL", "Docker Compose", "Figma", "draw.io"],
+    stack: ["Django 4.2", "Django REST Framework", "SimpleJWT", "React 18", "Vite", "PostgreSQL", "Docker Compose", "GitHub Spec Kit", "Figma", "draw.io"],
     problem:
       "EtudiaLab needed a working prototype of its school-management platform, with absence management at its core: teachers record attendance, parents are alerted, absences get justified, and the school sees which students are at risk.",
     solution:
@@ -147,6 +147,7 @@ export const projects: Project[] = [
     contributions: [
       "Designed the architecture first (week 1): entity-relationship model, API contract, UML diagrams (use case, class, sequence, activity, state, deployment, data flow) in draw.io and 7 screens in Figma with a small design system.",
       "Compared four ways to add video meetings (external link, Zoom / Google Meet API, in-house WebRTC, WebSockets) on effort, data ownership and deployment, and recommended one option for the prototype and one for production.",
+      "Worked spec-first with GitHub Spec Kit: each feature went from a written specification to a technical plan and a task list before AI-assisted implementation, so the specs stayed the source of truth.",
       "Built the back end with Django REST Framework: 13 Django apps and 16 models, JWT authentication with role-based permissions, and 20+ REST endpoints tested with Postman.",
       "Built the teacher side: a dashboard with daily sessions and alerts, an attendance sheet (present / absent / late, with each student's running absence count) and a weekly class report with PDF and CSV export.",
       "Built the student and parent side as mobile views: attendance history, alerts, and a 4-step wizard to justify an absence with a reason and an uploaded document, which the teacher then approves or rejects.",

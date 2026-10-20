@@ -40,14 +40,14 @@ const posts: JourneyPost[] = [
     photos: [],
     body: [
       "HackerRank Orchestrate is a 24-hour online AI hackathon: each participant designs, builds and ships an AI agent that solves a real-world problem, then defends it in an interview with an AI judge. I'm registered as a participant in the October 2026 edition, which starts on 24 October.",
-      "It fits what I've been doing in my last internship. At EtudiaLab I built AI-based automation workflows next to a full-stack product, and I want to push further: designing systems where several agents cooperate reliably, not just one prompt.",
+      "It fits what I've been doing in my last internship. At EtudiaLab I built a full-stack product with AI coding agents driven by written specifications (GitHub Spec Kit), and I want to push further: designing systems where several agents cooperate reliably, not just one prompt.",
       "I'll update this story with what I built and what I learned once the event is over.",
     ],
     takeaways: [
       "Practise AI-agent orchestration under real time pressure",
       "Ship something end-to-end in a short window",
     ],
-    related: [{ href: "/projects/edutrack-school-management-platform", label: "AI automation at EtudiaLab" }],
+    related: [{ href: "/projects/edutrack-school-management-platform", label: "Spec-driven AI development at EtudiaLab" }],
     tags: ["AI Agents", "Hackathon", "LLM"],
   },
   {
@@ -106,15 +106,15 @@ const posts: JourneyPost[] = [
     body: [
       "From 20 May to 20 July 2026 I was an intern at EtudiaLab, an EdTech startup. The official topic was the design and development of a full-stack prototype for a school-management platform.",
       "I worked as the only developer on it, which meant owning both sides of the job. On the analysis side I gathered requirements with stakeholders and produced Figma mockups, UML diagrams and functional specifications. On the build side I designed the architecture and shipped three role-based web apps and mobile views for students and parents, on a Django REST Framework back end with React + Vite front ends.",
-      "Alongside the platform I built AI-based automation workflows to speed up internal processes, and I closed the internship by presenting the results to the team.",
+      "I worked with spec-driven, AI-assisted development using GitHub Spec Kit: every feature started as a written specification, then a plan and a task list, before AI-assisted coding. I closed the internship by presenting the deliverables to my supervisor.",
     ],
     takeaways: [
       "Owning a product end-to-end: from requirements to delivery",
       "Writing specs that a developer, even yourself, can actually build from",
-      "Using AI automation where it saves real time",
+      "Letting written specs drive AI coding agents, not the other way around",
     ],
     related: [{ href: "/projects/edutrack-school-management-platform", label: "Read the EduTrack case study" }],
-    tags: ["Django REST", "React", "UML", "Figma", "AI Automation"],
+    tags: ["Django REST", "React", "UML", "Figma", "GitHub Spec Kit"],
   },
   {
     slug: "gitex-africa-2025-marrakech",

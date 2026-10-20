@@ -15,7 +15,7 @@ export const profile = {
   tagline:
     "I work on both sides of a project: understanding the business process and its requirements, then building and shipping the application that supports it.",
   summary:
-    "Final-year engineering student in Management & Governance of Information Systems at ENSIASD, with six professional experiences: enterprise web apps at a public port authority, a full school-management platform built end-to-end, a Web3 e-commerce platform, blockchain integrations and AI-driven automation. I combine business analysis (requirements, BPMN/UML, functional specifications, ERP) with full-stack development (React, Next.js, TypeScript, Node.js, NestJS, Django, Docker). Seeking a 6-month PFE internship from January 2027 in IS consulting, business analysis or software engineering.",
+    "Final-year engineering student in Management & Governance of Information Systems at ENSIASD, with six professional experiences: enterprise web apps at a public port authority, a full school-management platform built end-to-end, a Web3 e-commerce platform, blockchain integrations and AI-assisted, spec-driven development. I combine business analysis (requirements, BPMN/UML, functional specifications, ERP) with full-stack development (React, Next.js, TypeScript, Node.js, NestJS, Django, Docker). Seeking a 6-month PFE internship from January 2027 in IS consulting, business analysis or software engineering.",
 };
 
 // Organisations I've delivered work for — shown as a credibility strip on the homepage.
@@ -66,7 +66,7 @@ export const experience = [
     bullets: [
       "Designed the architecture and built on my own EduTrack, the attendance-management module of a school platform: 3 role-based web apps plus mobile views for students and parents (Django REST Framework, React + Vite, PostgreSQL, Docker).",
       "Gathered requirements with stakeholders and delivered Figma mockups, UML diagrams, functional specifications, Postman-tested APIs and technical / user documentation.",
-      "Built AI-based automation workflows to streamline internal processes, working in weekly Agile sprints.",
+      "Used spec-driven, AI-assisted development with GitHub Spec Kit (specification → plan → tasks → code), working in weekly Agile sprints.",
     ],
     tags: ["Django REST", "React", "Vite", "PostgreSQL", "Docker", "Figma", "Agile"],
   },
@@ -146,7 +146,7 @@ export const engineeringSkills = {
   Frontend: ["React.js", "Next.js", "Tailwind CSS", "Vite", "HTML5 / CSS3"],
   Databases: ["PostgreSQL", "MongoDB", "Redis", "Prisma ORM", "Relational data modeling"],
   Cloud_DevOps: ["Docker", "Kubernetes", "Kustomize", "Terraform", "Helm", "GitHub Actions (CI/CD)", "Prometheus / Grafana", "AWS", "Linux"],
-  Security_AI: ["SSO", "OAuth 2.0", "OpenID Connect", "LLM integration", "AI-driven automation"],
+  Security_AI: ["SSO", "OAuth 2.0", "OpenID Connect", "LLM integration", "Spec-driven development (GitHub Spec Kit)"],
   Business: ["BPMN 2.0", "UML", "Functional Analysis", "Odoo / ERP", "Power BI", "Figma", "Scrum / Kanban"],
 };
 
