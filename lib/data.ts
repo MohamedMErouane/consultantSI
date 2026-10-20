@@ -51,7 +51,9 @@ export const education = [
     degree: "University Diploma of Technology (DUT) — Computer Science",
     period: "2022 – 2024",
     location: "Essaouira, Morocco",
-    details: [],
+    details: [
+      "Final-year project: StudyHub, a collaborative study platform (Next.js, NestJS, PostgreSQL, real-time chat and video rooms), built as a team of two.",
+    ],
   },
 ];
 

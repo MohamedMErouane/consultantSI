@@ -186,7 +186,7 @@ const posts: JourneyPost[] = [
       "First internships, first production code",
     ],
     related: [
-      { href: "/education", label: "My education" },
+      { href: "/projects/studyhub-collaborative-study-platform", label: "My DUT final-year project: StudyHub" },
       { href: "/projects/marsa-maroc-enterprise-applications", label: "Marsa Maroc internship" },
     ],
     tags: ["EST Essaouira", "DUT", "Education"],

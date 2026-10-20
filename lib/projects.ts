@@ -172,6 +172,49 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: "studyhub-collaborative-study-platform",
+    title: "StudyHub — Collaborative Study Platform (DUT final-year project)",
+    shortTitle: "StudyHub",
+    period: "2024",
+    category: "Full-Stack / Real-time",
+    context: "DUT final-year project (PFE) at EST Essaouira, team of two",
+    role: "Full-stack developer (team project with a fellow student)",
+    stack: ["Next.js", "React", "TypeScript", "NestJS", "PostgreSQL", "Prisma", "Socket.io", "WebRTC (PeerJS)", "JWT", "Chart.js"],
+    problem:
+      "Students who study remotely juggle separate apps for video calls, chat, timers and to-do lists, and lose the motivation of studying with others.",
+    solution:
+      "A single web platform where students study together: video study rooms with a shared Pomodoro timer, real-time chat, study goals, study-time statistics and a leaderboard.",
+    impact:
+      "Delivered as our DUT final-year project: a working monorepo with a NestJS API and a Next.js client, covering authentication, real-time features and data visualisation.",
+    overview:
+      "StudyHub is a full-stack web app that helps students study together. It brings video study rooms, real-time chat, Pomodoro sessions, to-do lists, study-time tracking and a leaderboard into one place. We built it as a team of two for our DUT final-year project at EST Essaouira.",
+    contributions: [
+      "Built a NestJS REST API organised in modules (auth, users, to-dos, Pomodoro, messages, connected users) on PostgreSQL with Prisma.",
+      "Implemented authentication end to end: sign-up with email activation, login with JWT, hashed passwords (bcrypt), password reset by email, and protected routes through Next.js middleware.",
+      "Added real-time features: chat over WebSockets (Socket.io) with an online-users list, and peer-to-peer video study rooms with WebRTC (PeerJS).",
+      "Built the study tools: a Pomodoro timer that records study time per user, weekly study-hours charts (Chart.js), a to-do list and a leaderboard ranked by hours studied.",
+    ],
+    challenges: [
+      { title: "Real-time state", text: "Keeping chat messages and the list of connected users consistent across clients meant handling connections and disconnections on the WebSocket gateway, not only in the UI." },
+      { title: "Securing the app", text: "Every private page had to be protected before rendering, so route protection runs in Next.js middleware with JWT verification, on top of the API's own checks." },
+    ],
+    results: [
+      "Complete platform delivered and defended as our DUT final-year project (2024).",
+      "Source code public on GitHub as a monorepo (NestJS API + Next.js client).",
+    ],
+    skills: ["Full-stack development", "Real-time systems", "Authentication & security", "Teamwork", "Data visualisation"],
+    repoUrl: "https://github.com/MohamedMErouane/Pfe-F-B",
+    media: [
+      { src: "/projects/studyhub-collaborative-study-platform/video-room-pomodoro.webp", width: 1299, height: 620, thumb: true, wide: true, alt: "StudyHub video study room with a shared Pomodoro timer", caption: "A video study room (WebRTC) with the shared Pomodoro timer." },
+      { src: "/projects/studyhub-collaborative-study-platform/sign-up.webp", width: 1279, height: 640, alt: "StudyHub sign-up page", caption: "Sign-up with password-strength check; accounts are activated by email." },
+      { src: "/projects/studyhub-collaborative-study-platform/study-goals.webp", width: 1303, height: 558, alt: "StudyHub study goals to-do list", caption: "Study goals: a personal to-do list." },
+      { src: "/projects/studyhub-collaborative-study-platform/study-stats.webp", width: 1056, height: 539, alt: "StudyHub weekly study hours chart", caption: "Study time recorded by the Pomodoro timer, charted per day." },
+      { src: "/projects/studyhub-collaborative-study-platform/leaderboard.webp", width: 1318, height: 568, alt: "StudyHub leaderboard ranked by hours studied", caption: "Leaderboard ranked by hours studied." },
+      { src: "/projects/studyhub-collaborative-study-platform/reset-password.webp", width: 1358, height: 627, alt: "StudyHub password reset page", caption: "Password reset through a signed link sent by email." },
+      { src: "/projects/studyhub-collaborative-study-platform/connected-users.webp", width: 304, height: 387, alt: "StudyHub list of connected users", caption: "Online users, updated in real time over WebSockets." },
+    ],
+  },
+  {
     slug: "marsa-maroc-enterprise-applications",
     title: "Marsa Maroc — Enterprise Web Applications",
     shortTitle: "Marsa Maroc",
