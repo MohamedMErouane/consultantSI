@@ -234,17 +234,17 @@ export const projects: Project[] = [
   },
   {
     slug: "marsa-maroc-enterprise-applications",
-    title: "Marsa Maroc — Enterprise Web Applications",
+    title: "Marsa Maroc — Enterprise Web Applications & Android App",
     shortTitle: "Marsa Maroc",
     period: "06/2023 – 08/2023",
     category: "Full-Stack — Port Authority",
     context: "Internship at Marsa Maroc, Agadir — Morocco's leading port operator",
     role: "Full-stack developer intern",
-    stack: ["React.js", "NestJS", "TypeScript", "Prisma", "PostgreSQL", "Git"],
+    stack: ["React.js", "NestJS", "TypeScript", "Prisma", "PostgreSQL", "Android", "Git"],
     problem:
       "Internal applications at a public port operator had to keep evolving while staying reliable for day-to-day operations.",
     solution:
-      "Worked across the React.js front end and NestJS / Prisma / PostgreSQL back end, from functional discussion through code review to production release.",
+      "Worked across the React.js front end and NestJS / Prisma / PostgreSQL back end, from functional discussion through code review to production release, and built an Android app for the port's staff cafeteria (buvette).",
     impact:
       "New features went live in production; work with developers and business teams focused on keeping the codebase maintainable as it grew.",
     overview:
@@ -252,6 +252,7 @@ export const projects: Project[] = [
     contributions: [
       "Developed and maintained features on enterprise web applications with React.js, NestJS, TypeScript, Prisma and PostgreSQL.",
       "Built responsive, cross-browser interfaces used by internal teams.",
+      "Built a native Android application for the port's staff cafeteria (buvette restaurant).",
       "Took part in code reviews and architecture discussions with the development team.",
       "Worked with business teams to understand needs before implementing them.",
       "Shipped features to production as part of a cross-functional team.",

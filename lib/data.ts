@@ -120,10 +120,11 @@ export const experience = [
     location: "Agadir, Morocco",
     bullets: [
       "Built and maintained enterprise applications using React.js, NestJS, TypeScript, Prisma and PostgreSQL.",
+      "Built a native Android application for the port's staff cafeteria (buvette restaurant).",
       "Participated in code reviews, functional discussions and production feature delivery.",
       "Collaborated with multidisciplinary teams to improve maintainability and scalability.",
     ],
-    tags: ["React.js", "NestJS", "TypeScript", "Prisma", "PostgreSQL"],
+    tags: ["React.js", "NestJS", "TypeScript", "Prisma", "PostgreSQL", "Android"],
   },
 ];
 
