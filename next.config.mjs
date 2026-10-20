@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Projects taken off the site: send old links to the projects list.
+  async redirects() {
+    return [
+      { source: "/projects/odoo-erp-deployment", destination: "/projects", permanent: true },
+      { source: "/projects/enterprise-management-platform", destination: "/projects", permanent: true },
+    ];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
   },

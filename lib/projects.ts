@@ -22,9 +22,10 @@ export type Project = {
   featured?: boolean;
   repoUrl?: string;
   media?: Media[]; // the item marked `thumb` (or the first) is the card image
+  hidden?: boolean; // kept for reference, not published (no proof to show yet)
 };
 
-export const projects: Project[] = [
+const allProjects: Project[] = [
   {
     slug: "procure-to-pay-redesign-odoo",
     title: "Procure-to-Pay Process Redesign on Odoo 17",
@@ -280,6 +281,7 @@ export const projects: Project[] = [
   },
   {
     slug: "odoo-erp-deployment",
+    hidden: true,
     title: "ERP Deployment on Odoo (Academic Project)",
     shortTitle: "Odoo ERP",
     period: "2025",
@@ -492,6 +494,7 @@ export const projects: Project[] = [
   },
   {
     slug: "enterprise-management-platform",
+    hidden: true,
     title: "Enterprise Web Management Platform",
     shortTitle: "Management platform",
     period: "2025 – 2026",
@@ -519,5 +522,7 @@ export const projects: Project[] = [
     skills: ["API design", "Authentication", "Dashboards", "Relational modelling"],
   },
 ];
+
+export const projects = allProjects.filter((p) => !p.hidden);
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
