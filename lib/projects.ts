@@ -252,7 +252,7 @@ export const projects: Project[] = [
     contributions: [
       "Developed and maintained features on enterprise web applications with React.js, NestJS, TypeScript, Prisma and PostgreSQL.",
       "Built responsive, cross-browser interfaces used by internal teams.",
-      "Built a native Android application for the port's staff cafeteria (buvette restaurant).",
+      "Built a native Android application for the port's staff cafeteria (buvette): sign-up and login, a home screen with food and drink categories, menus with descriptions and prices, a basket and a profile, modelled first as a UML use-case diagram.",
       "Took part in code reviews and architecture discussions with the development team.",
       "Worked with business teams to understand needs before implementing them.",
       "Shipped features to production as part of a cross-functional team.",
@@ -269,9 +269,14 @@ export const projects: Project[] = [
     ],
     results: [
       "Features delivered to production in a public-sector enterprise environment.",
+      "An Android ordering app delivered for the port's staff cafeteria.",
       "Hands-on experience with a typed full-stack (TypeScript end to end) and team code-review workflows.",
     ],
-    skills: ["TypeScript full-stack", "Code review", "Enterprise applications", "Working with business teams"],
+    skills: ["TypeScript full-stack", "Android development", "Code review", "Enterprise applications", "Working with business teams"],
+    media: [
+      { src: "/projects/marsa-maroc-enterprise-applications/buvette-app-screens.webp", width: 2020, height: 712, wide: true, thumb: true, alt: "Screens of the Android app for the Marsa Maroc port cafeteria", caption: "Android app for the port's cafeteria: welcome, sign-up / login, home with categories, and menus with prices." },
+      { src: "/projects/marsa-maroc-enterprise-applications/buvette-use-case.webp", width: 890, height: 475, wide: true, alt: "UML use-case diagram of the cafeteria app", caption: "UML use cases: from the welcome page through authentication to choosing dishes." },
+    ],
   },
   {
     slug: "odoo-erp-deployment",
