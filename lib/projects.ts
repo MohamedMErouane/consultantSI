@@ -1,6 +1,8 @@
 // Project case studies. Each entry powers a card on /projects and its own page at /projects/[slug].
 // Only facts that appear on the CV or were actually delivered — no invented metrics.
 import type { Media } from "./media";
+import type { Lang } from "./i18n";
+import { projectsFr } from "./fr/projects";
 
 export type Project = {
   slug: string;
@@ -531,3 +533,18 @@ const allProjects: Project[] = [
 export const projects = allProjects.filter((p) => !p.hidden);
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
+
+/** Project with its text in the requested language (French overrides by slug). */
+export function localizeProject(p: Project, lang: Lang): Project {
+  const t = lang === "fr" ? projectsFr[p.slug] : undefined;
+  if (!t) return p;
+  const { media: mediaText, ...text } = t;
+  return { ...p, ...text, media: p.media?.map((m, i) => ({ ...m, ...(mediaText?.[i] ?? {}) })) };
+}
+
+export const getProjects = (lang: Lang) => projects.map((p) => localizeProject(p, lang));
+
+export const getLocalizedProject = (slug: string, lang: Lang) => {
+  const p = getProject(slug);
+  return p ? localizeProject(p, lang) : undefined;
+};

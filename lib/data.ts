@@ -40,10 +40,10 @@ export const education = [
     school: "ENSIASD — École Nationale Supérieure de l'Intelligence Artificielle et des Sciences des Données",
     degree: "Engineering Degree — Management & Governance of Information Systems",
     period: "2024 – Present",
-    location: "Morocco",
+    location: "Taroudant, Morocco",
     details: [
       "Relevant coursework: ERP Systems, Business Process Management, Information Systems Governance, Change Management, Database Systems, Software Engineering.",
-      "Academic project: ERP-oriented information system covering inventory, purchasing, sales and reporting processes.",
+      "Projects: Procure-to-Pay redesign on Odoo 17 and a Morocco / EU cybersecurity regulatory analysis (MCGL framework).",
     ],
   },
   {
@@ -133,13 +133,23 @@ export const consultingCompetencies = [
   { label: "Requirements Engineering", detail: "Elicitation, functional & non-functional requirements, user stories." },
   { label: "Functional Specifications", detail: "Cahier des charges, business requirements documents, use cases." },
   { label: "UML & BPMN", detail: "Process, class, sequence and use-case modeling for functional design." },
-  { label: "ERP Concepts", detail: "Inventory, purchasing, sales and reporting process design (academic ERP project)." },
+  { label: "ERP Concepts", detail: "Odoo 17 Procure-to-Pay redesign: approval matrix, three-way match, BPMN As-Is / To-Be and functional specification." },
   { label: "IT Governance", detail: "Information systems governance frameworks and coursework at ENSIASD." },
   { label: "Change Management", detail: "Conduite du changement coursework at ENSIASD; user documentation written to support system adoption." },
   { label: "Stakeholder Management", detail: "Collaboration with business stakeholders during the EtudiaLab and Marsa Maroc internships." },
   { label: "Agile / Scrum", detail: "Sprint-based delivery and CI/CD practices at EtudiaLab and Marsa Maroc." },
   { label: "Risk & Compliance Analysis", detail: "Morocco / EU cybersecurity gap analysis (NIS2, GDPR, laws 09-08 and 05-20) and the MCGL framework: 15 controls mapped to NIST CSF and ISO 27001." },
 ];
+
+export const engineeringGroupLabels: Record<string, string> = {
+  Programming: "Programming",
+  Backend: "Backend",
+  Frontend: "Frontend",
+  Databases: "Databases",
+  Cloud_DevOps: "Cloud & DevOps",
+  Security_AI: "Security & AI",
+  Business: "Business, ERP & Design",
+};
 
 export const engineeringSkills = {
   Programming: ["TypeScript", "JavaScript", "Python", "Java", "SQL"],

@@ -2,6 +2,8 @@
 // Add a story: drop photos in /public/journey and add an entry below (newest first is not required; the list is sorted).
 
 import type { Media } from "./media";
+import type { Lang } from "./i18n";
+import { journeyFr } from "./fr/journey";
 
 export type JourneyPhoto = Media;
 
@@ -195,3 +197,29 @@ const posts: JourneyPost[] = [
 
 export const journey = [...posts].sort((a, b) => b.date.localeCompare(a.date));
 export const getJourneyPost = (slug: string) => journey.find((p) => p.slug === slug);
+
+/** Story with its text in the requested language (French overrides by slug). */
+export function localizeJourney(p: JourneyPost, lang: Lang): JourneyPost {
+  const t = lang === "fr" ? journeyFr[p.slug] : undefined;
+  if (!t) return p;
+  return {
+    ...p,
+    title: t.title,
+    dateLabel: t.dateLabel,
+    location: t.location,
+    excerpt: t.excerpt,
+    cover: { ...p.cover, ...t.cover },
+    photos: p.photos.map((ph, i) => ({ ...ph, ...(t.photos[i] ?? {}) })),
+    body: t.body,
+    takeaways: t.takeaways,
+    related: p.related?.map((r, i) => ({ ...r, label: t.related?.[i] ?? r.label })),
+    tags: t.tags,
+  };
+}
+
+export const getJourney = (lang: Lang) => journey.map((p) => localizeJourney(p, lang));
+
+export const getLocalizedJourneyPost = (slug: string, lang: Lang) => {
+  const p = getJourneyPost(slug);
+  return p ? localizeJourney(p, lang) : undefined;
+};

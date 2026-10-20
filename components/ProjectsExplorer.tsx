@@ -4,18 +4,21 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import ProjectCard, { Project } from "@/components/ProjectCard";
 import { cn } from "@/lib/cn";
+import type { Lang } from "@/lib/i18n";
 
-export default function ProjectsExplorer({ projects }: { projects: Project[] }) {
+export default function ProjectsExplorer({ projects, lang = "en" }: { projects: Project[]; lang?: Lang }) {
+  const fr = lang === "fr";
+  const ALL = fr ? "Tous" : "All";
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState<string>("All");
+  const [category, setCategory] = useState<string>(fr ? "Tous" : "All");
 
   const categories = useMemo(
-    () => ["All", ...Array.from(new Set(projects.map((p) => p.category)))],
-    [projects]
+    () => [ALL, ...Array.from(new Set(projects.map((p) => p.category)))],
+    [projects, ALL]
   );
 
   const filtered = projects.filter((p) => {
-    const matchesCategory = category === "All" || p.category === category;
+    const matchesCategory = category === ALL || p.category === category;
     const q = query.trim().toLowerCase();
     const matchesQuery =
       q.length === 0 ||
@@ -33,7 +36,8 @@ export default function ProjectsExplorer({ projects }: { projects: Project[] }) 
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search projects or stack…"
+            placeholder={fr ? "Rechercher un projet ou une techno…" : "Search projects or stack…"}
+            aria-label={fr ? "Rechercher un projet" : "Search projects"}
             className="w-full rounded-lg border border-border bg-bg-panel/60 pl-9 pr-3 py-2.5 text-sm text-ink placeholder:text-ink-faint outline-none focus:border-accent/60 transition-colors"
           />
         </div>
@@ -57,12 +61,12 @@ export default function ProjectsExplorer({ projects }: { projects: Project[] }) 
 
       {filtered.length === 0 ? (
         <p className="mt-16 text-center text-ink-muted text-sm">
-          No project matches "{query}". Try a different search term.
+          {fr ? `Aucun projet ne correspond à « ${query} ». Essayez un autre terme.` : `No project matches "${query}". Try a different search term.`}
         </p>
       ) : (
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((p) => (
-            <ProjectCard key={p.title} project={p} />
+            <ProjectCard key={p.title} project={p} lang={lang} />
           ))}
         </div>
       )}

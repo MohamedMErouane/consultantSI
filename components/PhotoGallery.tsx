@@ -4,9 +4,11 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import type { Media } from "@/lib/media";
+import type { Lang } from "@/lib/i18n";
 
 // Photo grid with a keyboard-accessible full-screen viewer.
-export default function PhotoGallery({ photos }: { photos: Media[] }) {
+export default function PhotoGallery({ photos, lang = "en" }: { photos: Media[]; lang?: Lang }) {
+  const fr = lang === "fr";
   const [open, setOpen] = useState<number | null>(null);
   const close = useCallback(() => setOpen(null), []);
   const step = useCallback(
@@ -42,7 +44,7 @@ export default function PhotoGallery({ photos }: { photos: Media[] }) {
               type="button"
               onClick={() => setOpen(i)}
               className="block w-full overflow-hidden rounded-xl border border-border-soft bg-bg-elevated focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              aria-label={`Open photo: ${p.alt}`}
+              aria-label={`${fr ? "Agrandir la photo : " : "Open photo: "}${p.alt}`}
             >
               <Image
                 src={p.src}
@@ -66,7 +68,7 @@ export default function PhotoGallery({ photos }: { photos: Media[] }) {
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
           onClick={close}
         >
-          <button type="button" onClick={close} className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white hover:bg-white/20" aria-label="Close">
+          <button type="button" onClick={close} className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white hover:bg-white/20" aria-label={fr ? "Fermer" : "Close"}>
             <X size={22} />
           </button>
           {photos.length > 1 && (
@@ -75,7 +77,7 @@ export default function PhotoGallery({ photos }: { photos: Media[] }) {
                 type="button"
                 onClick={(e) => { e.stopPropagation(); step(-1); }}
                 className="absolute left-3 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
-                aria-label="Previous photo"
+                aria-label={fr ? "Photo précédente" : "Previous photo"}
               >
                 <ChevronLeft size={26} />
               </button>
@@ -83,7 +85,7 @@ export default function PhotoGallery({ photos }: { photos: Media[] }) {
                 type="button"
                 onClick={(e) => { e.stopPropagation(); step(1); }}
                 className="absolute right-3 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
-                aria-label="Next photo"
+                aria-label={fr ? "Photo suivante" : "Next photo"}
               >
                 <ChevronRight size={26} />
               </button>

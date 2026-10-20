@@ -3,14 +3,16 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Badge from "@/components/Badge";
 import type { Project } from "@/lib/projects";
+import { type Lang, localePath } from "@/lib/i18n";
 
 export type { Project };
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({ project, lang = "en" }: { project: Project; lang?: Lang }) {
+  const fr = lang === "fr";
   const thumb = project.media?.find((m) => m.thumb) ?? project.media?.[0];
   return (
     <Link
-      href={`/projects/${project.slug}`}
+      href={localePath(lang, `/projects/${project.slug}`)}
       className="group glass rounded-2xl p-6 sm:p-7 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-accent/40"
     >
       {thumb && (
@@ -34,7 +36,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       <div className="mt-5 space-y-3 text-sm flex-1">
         <div>
-          <p className="font-mono text-[11px] text-accent tracking-wide">PROBLEM</p>
+          <p className="font-mono text-[11px] text-accent tracking-wide">{fr ? "PROBLÈME" : "PROBLEM"}</p>
           <p className="text-ink-muted leading-relaxed mt-0.5">{project.problem}</p>
         </div>
         <div>
@@ -50,7 +52,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <span className="mt-6 inline-flex items-center gap-1.5 text-sm text-accent">
-        {project.repoUrl ? "Case study + code" : "Read the case study"}
+        {project.repoUrl ? (fr ? "Étude de cas + code" : "Case study + code") : fr ? "Lire l'étude de cas" : "Read the case study"}
         <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       </span>
     </Link>
