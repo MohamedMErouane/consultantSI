@@ -145,7 +145,8 @@ export const projects: Project[] = [
     overview:
       "EduTrack is the attendance-management module of EtudiaLab's school platform. During my internship I was responsible for the whole technical side of the prototype: the architecture and data model, the draw.io diagrams and Figma mockups, the Django REST API and the React interfaces for teachers, students, parents and school administrators.",
     contributions: [
-      "Designed the architecture first (week 1): entity-relationship model, API contract, user-flow diagrams in draw.io and 7 screens in Figma with a small design system.",
+      "Designed the architecture first (week 1): entity-relationship model, API contract, UML diagrams (use case, class, sequence, activity, state, deployment, data flow) in draw.io and 7 screens in Figma with a small design system.",
+      "Compared four ways to add video meetings (external link, Zoom / Google Meet API, in-house WebRTC, WebSockets) on effort, data ownership and deployment, and recommended one option for the prototype and one for production.",
       "Built the back end with Django REST Framework: 13 Django apps and 16 models, JWT authentication with role-based permissions, and 20+ REST endpoints tested with Postman.",
       "Built the teacher side: a dashboard with daily sessions and alerts, an attendance sheet (present / absent / late, with each student's running absence count) and a weekly class report with PDF and CSV export.",
       "Built the student and parent side as mobile views: attendance history, alerts, and a 4-step wizard to justify an absence with a reason and an uploaded document, which the teacher then approves or rejects.",
@@ -177,6 +178,14 @@ export const projects: Project[] = [
       "Next steps I documented: real-time updates with WebSockets, a native mobile app, server-side PDF generation and an automated test suite.",
     ],
     skills: ["Software architecture", "Data modelling", "REST API design", "Role-based security", "UI/UX in Figma", "Autonomy"],
+    media: [
+      { src: "/projects/edutrack-school-management-platform/uml-use-case.webp", width: 2020, height: 1330, wide: true, thumb: true, alt: "EduTrack UML use-case diagram with teacher, student, parent and admin actors", caption: "Use cases (UML): 17 use cases across teachers, students, parents, school admins and EtudiaLab admins." },
+      { src: "/projects/edutrack-school-management-platform/uml-class.webp", width: 1360, height: 1430, alt: "EduTrack UML class diagram", caption: "Class diagram: users, schools, timetable, attendance, justifications, notifications and parent accounts." },
+      { src: "/projects/edutrack-school-management-platform/uml-state.webp", width: 1060, height: 850, alt: "UML state diagram of an absence lifecycle", caption: "Lifecycle of an attendance record: not recorded → present / late / absent → justified or refused." },
+      { src: "/projects/edutrack-school-management-platform/uml-deployment.webp", width: 1550, height: 1190, alt: "EduTrack deployment diagram with Docker Compose", caption: "Deployment: React + Vite front end, Django REST API and PostgreSQL as three Docker Compose services." },
+      { src: "/projects/edutrack-school-management-platform/uml-dfd.webp", width: 1559, height: 1200, alt: "EduTrack level-1 data flow diagram", caption: "Data flows (DFD level 1) between teachers, students, parents, the school admin and the data stores." },
+      { src: "/projects/edutrack-school-management-platform/meetings-solution-analysis.webp", width: 1800, height: 1434, wide: true, alt: "Comparison of four communication solutions for the meetings feature", caption: "Decision analysis for the meetings feature: 4 options compared on effort, data ownership and Docker compatibility, with a recommendation for the prototype and for production." },
+    ],
     featured: true,
   },
   {
