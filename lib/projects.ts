@@ -424,6 +424,7 @@ const allProjects: Project[] = [
     overview:
       "A personal project where players race in real time and connect their Solana wallets. The interesting part is trust: every race outcome is generated with a provably fair mechanism, so players can verify it wasn't manipulated.",
     contributions: [
+      "Built the game interface: players pick one of 10 meme characters, see live player count, prize pool in SOL and a countdown, can watch races and check a global leaderboard.",
       "Built the real-time multiplayer layer with Node.js and Socket.io.",
       "Implemented a provably fair outcome mechanism based on HMAC-SHA256.",
       "Integrated Solana wallets for player identity and transactions.",
@@ -442,6 +443,10 @@ const allProjects: Project[] = [
     ],
     results: ["Working real-time multiplayer game with verifiable outcomes and wallet integration."],
     skills: ["Real-time systems", "WebSockets", "Cryptographic fairness", "Redis", "Docker"],
+    media: [
+      { src: "/projects/memerace-solana-multiplayer/race-track.webp", width: 1346, height: 596, wide: true, thumb: true, alt: "MemeRace race track with meme characters at the start line", caption: "The race: pick a meme, then follow the live player count, SOL pool and countdown." },
+      { src: "/projects/memerace-solana-multiplayer/home.webp", width: 1365, height: 600, wide: true, alt: "MemeRace home screen with Watch Race and Global Leaderboard", caption: "Home screen: watch a race live or open the global leaderboard." },
+    ],
   },
   {
     slug: "web3-ecommerce-platform",
