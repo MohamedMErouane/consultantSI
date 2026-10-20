@@ -138,7 +138,7 @@ export const consultingCompetencies = [
   { label: "Change Management", detail: "Conduite du changement coursework at ENSIASD; user documentation written to support system adoption." },
   { label: "Stakeholder Management", detail: "Collaboration with business stakeholders during the EtudiaLab and Marsa Maroc internships." },
   { label: "Agile / Scrum", detail: "Sprint-based delivery and CI/CD practices at EtudiaLab and Marsa Maroc." },
-  { label: "Risk & Compliance Analysis", detail: "Risk identification, internal control and regulatory analysis (Morocco / EU cybersecurity study)." },
+  { label: "Risk & Compliance Analysis", detail: "Morocco / EU cybersecurity gap analysis (NIS2, GDPR, laws 09-08 and 05-20) and the MCGL framework: 15 controls mapped to NIST CSF and ISO 27001." },
 ];
 
 export const engineeringSkills = {
