@@ -64,9 +64,9 @@ export const experience = [
     period: "05/2026 – 07/2026",
     location: "Morocco · Remote",
     bullets: [
-      "Designed and built on my own the full architecture of EduTrack, a school-management platform: 3 web apps and 1 mobile app (Django REST Framework back end, React + Vite front end, REST APIs).",
-      "Gathered requirements with stakeholders and delivered Figma mockups, UML diagrams, functional specifications, tests and technical / user documentation.",
-      "Built AI-based automation workflows to streamline internal processes, working in Agile with CI/CD.",
+      "Designed the architecture and built on my own EduTrack, the attendance-management module of a school platform: 3 role-based web apps plus mobile views for students and parents (Django REST Framework, React + Vite, PostgreSQL, Docker).",
+      "Gathered requirements with stakeholders and delivered Figma mockups, UML diagrams, functional specifications, Postman-tested APIs and technical / user documentation.",
+      "Built AI-based automation workflows to streamline internal processes, working in weekly Agile sprints.",
     ],
     tags: ["Django REST", "React", "Vite", "PostgreSQL", "Docker", "Figma", "Agile"],
   },

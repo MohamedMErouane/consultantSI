@@ -27,7 +27,7 @@ const cvs = [
 
 const featured = [
   { slug: "procure-to-pay-redesign-odoo", title: "Refonte Procure-to-Pay sur Odoo 17", tag: "Conseil SI / ERP" },
-  { slug: "edutrack-school-management-platform", title: "EduTrack — 3 apps web + 1 mobile, conçu seul", tag: "Full-Stack · IA" },
+  { slug: "edutrack-school-management-platform", title: "EduTrack — gestion des absences, architecture et dev en solo", tag: "Full-Stack · IA" },
   { slug: "kubernetes-devops-platform", title: "Plateforme Kubernetes — CI/CD, IaC, observabilité", tag: "DevOps" },
   { slug: "arcade-gaming-xrpl-44you", title: "Jeu multijoueur + blockchain XRPL (44you)", tag: "Web3 · Freelance" },
 ];

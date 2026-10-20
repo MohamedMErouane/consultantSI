@@ -86,7 +86,7 @@ const posts: JourneyPost[] = [
     category: "Internship",
     location: "EtudiaLab, Morocco",
     excerpt:
-      "My internship at EtudiaLab, where I designed and built a full-stack school-management prototype: three web apps and a mobile app.",
+      "My internship at EtudiaLab, where I designed and built a full-stack school-management prototype: three web apps plus mobile views for students and parents.",
     cover: {
       src: "/journey/etudialab-presentation.webp",
       alt: "Mohamed Merouane presenting his work in front of a projected screen during the EtudiaLab internship",
@@ -105,7 +105,7 @@ const posts: JourneyPost[] = [
     ],
     body: [
       "From 20 May to 20 July 2026 I was an intern at EtudiaLab, an EdTech startup. The official topic was the design and development of a full-stack prototype for a school-management platform.",
-      "I worked as the only developer on it, which meant owning both sides of the job. On the analysis side I gathered requirements with stakeholders and produced Figma mockups, UML diagrams and functional specifications. On the build side I designed the architecture and shipped three web apps and one mobile app on a Django REST Framework back end with React + Vite front ends.",
+      "I worked as the only developer on it, which meant owning both sides of the job. On the analysis side I gathered requirements with stakeholders and produced Figma mockups, UML diagrams and functional specifications. On the build side I designed the architecture and shipped three role-based web apps and mobile views for students and parents, on a Django REST Framework back end with React + Vite front ends.",
       "Alongside the platform I built AI-based automation workflows to speed up internal processes, and I closed the internship by presenting the results to the team.",
     ],
     takeaways: [
