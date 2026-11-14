@@ -22,16 +22,54 @@ export const journeyCategoryFr = {
 } as const;
 
 export const journeyFr: Record<string, JourneyText> = {
+  "pfa-defense-edutrack-ensiasd-2026": {
+    title: "Soutenance PFA : présenter EduTrack devant le jury de l'ENSIASD",
+    dateLabel: "12 novembre 2026",
+    location: "ENSIASD, Taroudant",
+    excerpt:
+      "J'ai soutenu mon stage de 8 semaines chez EtudiaLab devant le jury de l'ENSIASD : le besoin métier, l'architecture, la pile technique et une démonstration des écrans d'EduTrack. Tout s'est bien passé et la soutenance est validée.",
+    cover: { alt: "Mohamed Merouane montrant le tableau de bord enseignant d'EduTrack à l'écran pendant sa soutenance PFA à l'ENSIASD" },
+    photos: [
+      {
+        alt: "Mohamed Merouane présentant la diapositive de la pile technique d'EduTrack à deux membres du jury dans l'espace robotique de l'ENSIASD",
+        caption: "La diapositive de la pile technique : 8 semaines, 16 modèles de données, plus de 20 endpoints REST et 7 écrans, avec React + Vite, Django REST Framework, PostgreSQL et Docker Compose.",
+      },
+      {
+        alt: "Mohamed Merouane présentant au jury le tableau de bord enseignant et la saisie des présences d'EduTrack",
+        caption: "Démonstration du côté enseignant : le tableau de bord (taux de présence, absences du jour, élèves en alerte) et la saisie des présences.",
+      },
+      {
+        alt: "Mohamed Merouane devant l'entrée principale de l'ENSIASD à Taroudant le jour de la soutenance",
+        caption: "Devant l'ENSIASD, le jour de la soutenance.",
+      },
+      {
+        alt: "Mohamed Merouane souriant sur le campus de l'ENSIASD après la soutenance, son rapport de stage à la main",
+        caption: "Juste après la soutenance, rapport en main.",
+      },
+    ],
+    body: [
+      "Le 12 novembre 2026, j'ai soutenu mon stage PFA à l'ENSIASD de Taroudant. Le projet : EduTrack, le module de gestion des absences que j'ai conçu et développé seul pendant huit semaines chez EtudiaLab.",
+      "J'ai construit la présentation comme un livrable de conseil : d'abord le besoin métier (des enseignants qui font l'appel rapidement, un établissement qui repère tôt les élèves à risque), puis la conception en UML et sur Figma, puis la réalisation, avec 16 modèles de données, plus de 20 endpoints REST et 7 écrans sur Django REST Framework, React + Vite, PostgreSQL et Docker Compose.",
+      "Le moment le plus convaincant a été la démonstration des interfaces enseignant : le tableau de bord avec le taux de présence, les absences du jour et les élèves en alerte, et la feuille de présence pensée pour être remplie en début de cours. Les questions du jury portaient sur les choix de conception, et la soutenance est validée.",
+    ],
+    takeaways: [
+      "Raconter un projet en besoin → conception → réalisation → résultats",
+      "Montrer le vrai produit, pas seulement des diapositives",
+      "Défendre ses choix de conception devant un public exigeant",
+    ],
+    related: ["Lire l'étude de cas EduTrack", "Le stage derrière le projet"],
+    tags: ["ENSIASD", "PFA", "EduTrack", "Présentation"],
+  },
   "hackerrank-orchestrate-october-2026": {
-    title: "Participer à HackerRank Orchestrate, édition d'octobre",
+    title: "HackerRank Orchestrate, édition d'octobre 2026 : le hackathon IA de 24 heures",
     dateLabel: "24 octobre 2026",
     location: "En ligne",
     excerpt:
-      "Je suis inscrit à HackerRank Orchestrate, un hackathon en ligne de 24 heures où chaque participant conçoit, développe et livre un agent IA. Voici pourquoi je participe.",
+      "HackerRank Orchestrate, édition d'octobre 2026 : un hackathon en ligne de 24 heures où chaque participant construit et livre un agent IA, puis le défend devant un jury IA. Le fonctionnement, et pourquoi je me suis inscrit.",
     cover: { alt: "Badge de participant de Mohamed Merouane à HackerRank Orchestrate, édition d'octobre" },
     photos: [],
     body: [
-      "HackerRank Orchestrate est un hackathon IA en ligne de 24 heures : chaque participant conçoit, développe et livre un agent IA qui résout un problème réel, puis le défend lors d'un entretien avec un jury IA. Je suis inscrit à l'édition d'octobre 2026, qui commence le 24 octobre.",
+      "HackerRank Orchestrate est un hackathon IA en ligne de 24 heures : chaque participant conçoit, développe et livre un agent IA qui résout un problème réel, puis le défend lors d'un entretien avec un jury IA. Je me suis inscrit à l'édition d'octobre 2026, qui a commencé le 24 octobre.",
       "C'est dans la continuité de mon dernier stage. Chez EtudiaLab, j'ai construit un produit full-stack avec des agents de code IA guidés par des spécifications écrites (GitHub Spec Kit), et je veux aller plus loin : concevoir des systèmes où plusieurs agents coopèrent de façon fiable, et pas seulement un prompt.",
       "Je mettrai cette histoire à jour avec ce que j'ai construit et appris une fois l'événement terminé.",
     ],
@@ -40,7 +78,7 @@ export const journeyFr: Record<string, JourneyText> = {
       "Livrer quelque chose de bout en bout en très peu de temps",
     ],
     related: ["Le développement IA piloté par les specs chez EtudiaLab"],
-    tags: ["Agents IA", "Hackathon", "LLM"],
+    tags: ["HackerRank Orchestrate", "Agents IA", "Hackathon", "LLM"],
   },
   "ensiasd-internship-defense": {
     title: "Soutenir mon projet de stage à l'ENSIASD",

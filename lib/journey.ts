@@ -25,14 +25,75 @@ export type JourneyPost = {
 
 const posts: JourneyPost[] = [
   {
+    slug: "pfa-defense-edutrack-ensiasd-2026",
+    title: "PFA defense: presenting EduTrack to the ENSIASD jury",
+    date: "2026-11-12",
+    dateLabel: "12 November 2026",
+    category: "Milestone",
+    location: "ENSIASD, Taroudant",
+    excerpt:
+      "I defended my 8-week EtudiaLab internship before the ENSIASD jury: the business need, the architecture, the stack and a walkthrough of the EduTrack screens. It went well and I passed.",
+    cover: {
+      src: "/journey/pfa-defense-teacher-interfaces.webp",
+      alt: "Mohamed Merouane pointing at the EduTrack teacher dashboard on screen during his PFA defense at ENSIASD",
+      width: 720,
+      height: 960,
+    },
+    photos: [
+      {
+        src: "/journey/pfa-defense-tech-stack.webp",
+        alt: "Mohamed Merouane presenting the EduTrack technical stack slide to two jury members in the ENSIASD robotics room",
+        caption: "The stack slide: 8 weeks, 16 data models, 20+ REST endpoints and 7 screens, with React + Vite, Django REST Framework, PostgreSQL and Docker Compose.",
+        width: 720,
+        height: 960,
+      },
+      {
+        src: "/journey/pfa-defense-teacher-interfaces.webp",
+        alt: "Mohamed Merouane walking the jury through the EduTrack teacher dashboard and attendance-entry screens",
+        caption: "Walking the jury through the teacher side: the dashboard (attendance rate, today's absences, at-risk students) and attendance entry.",
+        width: 720,
+        height: 960,
+      },
+      {
+        src: "/journey/pfa-defense-ensiasd-gate.webp",
+        alt: "Mohamed Merouane standing in front of the ENSIASD main gate in Taroudant on the day of the defense",
+        caption: "In front of ENSIASD, on defense day.",
+        width: 720,
+        height: 960,
+      },
+      {
+        src: "/journey/pfa-defense-after.webp",
+        alt: "Mohamed Merouane smiling on the ENSIASD campus after the defense, holding his internship report",
+        caption: "Right after the defense, report in hand.",
+        width: 720,
+        height: 960,
+      },
+    ],
+    body: [
+      "On 12 November 2026 I defended my PFA internship at ENSIASD in Taroudant. The project was EduTrack, the attendance-management module I designed and built on my own during eight weeks at EtudiaLab.",
+      "I built the presentation like a consulting deliverable: first the business need (teachers taking attendance quickly, schools spotting at-risk students early), then the design work in UML and Figma, then the implementation, with 16 data models, 20+ REST endpoints and 7 screens on Django REST Framework, React + Vite, PostgreSQL and Docker Compose.",
+      "The part that landed best was the live walkthrough of the teacher interfaces: the dashboard with attendance rate, today's absences and students on alert, and the attendance sheet designed to be filled in at the start of class. The jury's questions were about the choices behind the design, and I passed.",
+    ],
+    takeaways: [
+      "Telling a project as need → design → build → results",
+      "Showing the real product, not just slides",
+      "Defending design decisions in front of a critical audience",
+    ],
+    related: [
+      { href: "/projects/edutrack-school-management-platform", label: "Read the EduTrack case study" },
+      { href: "/journey/etudialab-internship-edutrack", label: "The internship behind it" },
+    ],
+    tags: ["ENSIASD", "PFA", "EduTrack", "Presentation"],
+  },
+  {
     slug: "hackerrank-orchestrate-october-2026",
-    title: "Taking part in HackerRank Orchestrate — October edition",
+    title: "HackerRank Orchestrate October 2026 edition: the 24-hour AI agent hackathon",
     date: "2026-10-24",
     dateLabel: "24 October 2026",
     category: "Hackathon",
     location: "Online",
     excerpt:
-      "I'm registered for HackerRank Orchestrate, a 24-hour online hackathon where each participant designs, builds and ships an AI agent. Here's why I joined.",
+      "HackerRank Orchestrate, October 2026 edition: a 24-hour online hackathon where each participant builds and ships an AI agent, then defends it before an AI judge. How it works and why I signed up.",
     cover: {
       src: "/journey/hackerrank-orchestrate.webp",
       alt: "HackerRank Orchestrate October edition participant badge for Mohamed Merouane",
@@ -41,7 +102,7 @@ const posts: JourneyPost[] = [
     },
     photos: [],
     body: [
-      "HackerRank Orchestrate is a 24-hour online AI hackathon: each participant designs, builds and ships an AI agent that solves a real-world problem, then defends it in an interview with an AI judge. I'm registered as a participant in the October 2026 edition, which starts on 24 October.",
+      "HackerRank Orchestrate is a 24-hour online AI hackathon: each participant designs, builds and ships an AI agent that solves a real-world problem, then defends it in an interview with an AI judge. I registered as a participant in the October 2026 edition, which started on 24 October.",
       "It fits what I've been doing in my last internship. At EtudiaLab I built a full-stack product with AI coding agents driven by written specifications (GitHub Spec Kit), and I want to push further: designing systems where several agents cooperate reliably, not just one prompt.",
       "I'll update this story with what I built and what I learned once the event is over.",
     ],
@@ -50,7 +111,7 @@ const posts: JourneyPost[] = [
       "Ship something end-to-end in a short window",
     ],
     related: [{ href: "/projects/edutrack-school-management-platform", label: "Spec-driven AI development at EtudiaLab" }],
-    tags: ["AI Agents", "Hackathon", "LLM"],
+    tags: ["HackerRank Orchestrate", "AI Agents", "Hackathon", "LLM"],
   },
   {
     slug: "ensiasd-internship-defense",

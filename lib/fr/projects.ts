@@ -116,7 +116,7 @@ export const projectsFr: Record<string, ProjectText> = {
     solution:
       "J'ai conçu l'architecture et développé seul le prototype : trois applications React par rôle (école, enseignant, admin) et une application mobile pour les élèves et les parents, sur un back-end Django REST de 13 applications, 16 modèles de données et plus de 20 endpoints, lancé en une commande avec Docker Compose.",
     impact:
-      "Livré en 8 sprints hebdomadaires : 7 écrans EduTrack menés de la maquette Figma au code, avec un rapport d'avancement hebdomadaire à mon encadrant.",
+      "Livré en 8 sprints hebdomadaires : 7 écrans EduTrack menés de la maquette Figma au code, avec un rapport d'avancement hebdomadaire à mon encadrant. Soutenu devant le jury de l'ENSIASD le 12 novembre 2026 (PFA), avec succès.",
     overview:
       "EduTrack est le module de gestion des absences de la plateforme scolaire d'EtudiaLab. Pendant mon stage, j'étais responsable de toute la partie technique du prototype : l'architecture et le modèle de données, les diagrammes draw.io et les maquettes Figma, l'API Django REST et les interfaces React pour les enseignants, les élèves, les parents et les administrateurs d'établissement.",
     contributions: [

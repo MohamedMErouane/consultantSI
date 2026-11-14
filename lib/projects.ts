@@ -144,7 +144,7 @@ const allProjects: Project[] = [
     solution:
       "I designed the architecture and built the prototype alone: three role-based React apps (school, teacher, admin) plus a mobile app for students and parents, on a Django REST back end of 13 apps, 16 data models and 20+ endpoints, all started with one Docker Compose command.",
     impact:
-      "Delivered in 8 weekly sprints: 7 EduTrack screens taken from Figma mockups to working code, with weekly progress reports to my supervisor.",
+      "Delivered in 8 weekly sprints: 7 EduTrack screens taken from Figma mockups to working code, with weekly progress reports to my supervisor. Defended before the ENSIASD jury on 12 November 2026 (PFA) and passed.",
     overview:
       "EduTrack is the attendance-management module of EtudiaLab's school platform. During my internship I was responsible for the whole technical side of the prototype: the architecture and data model, the draw.io diagrams and Figma mockups, the Django REST API and the React interfaces for teachers, students, parents and school administrators.",
     contributions: [

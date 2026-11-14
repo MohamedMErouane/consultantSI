@@ -14,7 +14,7 @@ export const profile = {
   photoSize: 200,
   // One-line description reused everywhere (structured data, profiles) so Google ties them together.
   identity: "Mohamed Merouane is a Moroccan information systems engineering student at ENSIASD, business analyst and full-stack developer.",
-  lastUpdated: "Oct 2026",
+  lastUpdated: "Nov 2026",
   tagline:
     "I work on both sides of a project: understanding the business process and its requirements, then building and shipping the application that supports it.",
   summary:
@@ -47,6 +47,7 @@ export const education = [
     details: [
       "Relevant coursework: ERP Systems, Business Process Management, Information Systems Governance, Change Management, Database Systems, Software Engineering.",
       "Projects: Procure-to-Pay redesign on Odoo 17 and a Morocco / EU cybersecurity regulatory analysis (MCGL framework).",
+      "PFA internship defense (12 November 2026): presented EduTrack to the school jury and passed.",
     ],
   },
   {
@@ -70,6 +71,7 @@ export const experience = [
       "Designed the architecture and built on my own EduTrack, the attendance-management module of a school platform: 3 role-based web apps and a mobile app for students and parents (Django REST Framework, React + Vite, PostgreSQL, Docker).",
       "Gathered requirements with stakeholders and delivered Figma mockups, UML diagrams, functional specifications, Postman-tested APIs and technical / user documentation.",
       "Used spec-driven, AI-assisted development with GitHub Spec Kit (specification → plan → tasks → code), working in weekly Agile sprints.",
+      "Defended the internship (PFA) before the ENSIASD jury on 12 November 2026 and passed.",
     ],
     tags: ["Django REST", "React", "Vite", "PostgreSQL", "Docker", "Figma", "Agile"],
   },

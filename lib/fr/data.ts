@@ -6,7 +6,7 @@ export const profile = {
   roles: ["Business Analyst", "Consultant SI / ERP", "Ingénieur Full-Stack"],
   location: "Taroudant, Maroc",
   mobility: "Mobile : Maroc et Europe (France)",
-  lastUpdated: "oct. 2026",
+  lastUpdated: "nov. 2026",
   tagline:
     "Je travaille des deux côtés d'un projet : comprendre le processus métier et les besoins, puis construire et livrer l'application qui le supporte.",
   summary:
@@ -37,6 +37,7 @@ export const education = [
     details: [
       "Modules clés : systèmes ERP, Business Process Management, gouvernance des SI, conduite du changement, bases de données, génie logiciel.",
       "Projets : refonte du processus achats sur Odoo 17 et analyse réglementaire cybersécurité Maroc / UE (référentiel MCGL).",
+      "Soutenance du stage PFA (12 novembre 2026) : présentation d'EduTrack devant le jury de l'école, validée.",
     ],
   },
   {
@@ -60,6 +61,7 @@ export const experience = [
       "Conçu l'architecture et développé seul EduTrack, le module de gestion des absences d'une plateforme scolaire : 3 applications web par rôle et une application mobile pour les élèves et les parents (Django REST Framework, React + Vite, PostgreSQL, Docker).",
       "Recueilli les besoins avec les parties prenantes et livré maquettes Figma, diagrammes UML, spécifications fonctionnelles, APIs testées avec Postman et documentation technique et utilisateur.",
       "Travaillé en développement piloté par les spécifications et assisté par l'IA avec GitHub Spec Kit (spécification → plan → tâches → code), en sprints Agile hebdomadaires.",
+      "Soutenu le stage (PFA) devant le jury de l'ENSIASD le 12 novembre 2026, avec succès.",
     ],
     tags: ["Django REST", "React", "Vite", "PostgreSQL", "Docker", "Figma", "Agile"],
   },
